@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Privacy Policy — DebtClear (KrediErit)</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="author" content="Rooftop Online — rooftop.company">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:        #F5F5F5;
+      --surface:   #FFFFFF;
+      --border:    rgba(0,0,0,0.08);
+      --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+
+      --red-100:   #FFCDD2;
+      --red-700:   #c62828;
+      --green-100: #C8E6C9;
+      --blue-100:  #BBDEFB;
+      --blue-700:  #1565c0;
+
+      --ink-900:   #111827;
+      --ink-700:   #374151;
+      --ink-400:   #6B7280;
+
+      --font: 'Poppins', system-ui, -apple-system, sans-serif;
+      --radius: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink-900);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+    a { color: var(--blue-700); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAV ─────────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245,245,245,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--ink-900);
+      text-decoration: none;
+    }
+    .nav-brand span {
+      color: var(--red-700);
+    }
+    .nav-back {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--ink-400);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .nav-back:hover { color: var(--ink-700); text-decoration: none; }
+    .nav-back svg { width: 16px; height: 16px; }
+
+    /* ── LAYOUT ──────────────────────────────────────────────── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── PAGE HEADER ─────────────────────────────────────────── */
+    .page-header {
+      margin-bottom: 40px;
+    }
+    .page-tag {
+      display: inline-block;
+      background: var(--red-100);
+      color: var(--red-700);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .page-title {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--ink-900);
+      margin-bottom: 12px;
+    }
+    .page-meta {
+      font-size: 0.85rem;
+      color: var(--ink-400);
+    }
+
+    /* ── CALLOUT BOX ─────────────────────────────────────────── */
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--green-100);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 0.92rem;
+      color: var(--ink-700);
+    }
+    .callout strong { color: var(--ink-900); }
+
+    .callout-offline {
+      border-left-color: #A5D6A7;
+      background: #f6fbf6;
+    }
+
+    /* ── SECTION ─────────────────────────────────────────────── */
+    .policy-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--blue-100);
+      color: var(--blue-700);
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink-900);
+      margin-bottom: 12px;
+    }
+    .section-body {
+      font-size: 0.9rem;
+      color: var(--ink-700);
+    }
+    .section-body p + p {
+      margin-top: 12px;
+    }
+    .section-body ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .section-body ul li {
+      margin-bottom: 6px;
+    }
+
+    /* ── THIRD-PARTY CARD ────────────────────────────────────── */
+    .tp-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-top: 14px;
+    }
+    .tp-card-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--ink-900);
+      margin-bottom: 6px;
+    }
+    .tp-card-body {
+      font-size: 0.85rem;
+      color: var(--ink-700);
+      line-height: 1.6;
+    }
+    .tp-card-body a {
+      font-size: 0.82rem;
+    }
+    .tp-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-bottom: 8px;
+    }
+    .tp-label-analytics { background: var(--blue-100); color: var(--blue-700); }
+    .tp-label-ads       { background: var(--red-100);  color: var(--red-700);  }
+    .tp-label-crash     { background: var(--green-100); color: #2e7d32; }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    .page-footer {
+      margin-top: 60px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--ink-400);
+      text-align: center;
+      line-height: 1.8;
+    }
+    .page-footer a { color: var(--ink-400); }
+    .page-footer a:hover { color: var(--ink-700); text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .policy-section { padding: 20px 18px; }
+      .container { padding: 32px 16px 64px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ──────────────────────────────────────────── -->
+<nav class="nav" aria-label="Site navigation">
+  <a href="/" class="nav-brand">Debt<span>Clear</span></a>
+  <a href="/" class="nav-back" aria-label="Back to homepage">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+      <path d="M10 3L5 8l5 5"/>
+    </svg>
+    Back to home
+  </a>
+</nav>
+
+<main class="container">
+
+  <!-- ── PAGE HEADER ─────────────────────────────────────── -->
+  <header class="page-header">
+    <div class="page-tag">Legal</div>
+    <h1 class="page-title">Privacy Policy</h1>
+    <p class="page-meta">
+      Effective date: June 4, 2025 &nbsp;&middot;&nbsp;
+      App: <strong>DebtClear</strong> (published as <strong>KrediErit</strong> on Google Play) &nbsp;&middot;&nbsp;
+      Developer: <a href="https://rooftop.company" target="_blank" rel="noopener noreferrer">Rooftop Online</a>
+    </p>
+  </header>
+
+  <!-- ── OFFLINE CALLOUT ─────────────────────────────────── -->
+  <div class="callout callout-offline">
+    <strong>DebtClear / KrediErit works entirely offline.</strong> All debt data you enter — creditor names, balances, interest rates, and payment amounts — is stored only on your device. It is never transmitted to any server, never uploaded to the cloud, and never shared with us or any third party. We have no access to it, and we cannot recover it if you uninstall the app.
+  </div>
+
+  <!-- ── ABOUT ───────────────────────────────────────────── -->
+  <section class="policy-section">
+    <div class="section-number" aria-hidden="true">1</div>
+    <h2 class="section-title">About This App</h2>
+    <div class="section-body">
+      <p>DebtClear / KrediErit is a personal finance <strong>calculator application</strong>. It is not a bank, lender, credit counselor, debt settlement service, or financial institution of any kind. The app does not offer financial products, loan brokerage, or debt relief services.</p>
+      <p>The sole purpose of DebtClear is to help you estimate a debt payoff timeline using the Debt Snowball or Debt Avalanche method, based on numbers you enter yourself. All calculations happen locally on your device.</p>
+    </div>
+  </section>
+
+  <!-- ── DATA YOU ENTER ──────────────────────────────────── -->
+  <section class="policy-section">
+    <div class="section-number" aria-hidden="true">2</div>
+    <h2 class="section-title">Data You Enter — Stays on Your Device</h2>
+    <div class="section-body">
+      <p>The following data is stored locally in a private database on your device (SQLite via the Android data sandbox) and <strong>never leaves your phone</strong>:</p>
+      <ul>
+        <li>Creditor names</li>
+        <li>Debt balances, interest rates, and minimum payment amounts</li>
+        <li>Your monthly payment budget</li>
+        <li>Payment history and payoff status you mark within the app</li>
+        <li>Your chosen payoff strategy (Snowball or Avalanche)</li>
+      </ul>
+      <p>This data is not backed up to any cloud service by us. Android's standard auto-backup behavior may include it in your Google account backup depending on your device settings — this is controlled entirely by Android, not by us.</p>
+    </div>
+  </section>
+
+  <!-- ── APP PREFERENCES ────────────────────────────────── -->
+  <section class="policy-section">
+    <div class="section-number" aria-hidden="true">3</div>
+    <h2 class="section-title">App Settings &amp; Preferences</h2>
+    <div class="section-body">
+      <p>Non-sensitive app settings — such as your selected display language (English or Turkish) and whether you have completed the in-app onboarding tour — are stored locally using Android's <code>SharedPreferences</code>. This data is device-local and is not transmitted anywhere.</p>
+    </div>
+  </section>
+
+  <!-- ── LOCAL NOTIFICATIONS ────────────────────────────── -->
+  <section class="policy-section">
+    <div class="section-number" aria-hidden="true">4</div>
+    <h2 class="section-title">Local Notifications</h2>
+    <div class="section-body">
+      <p>If you enable payment reminders, the app schedules <strong>local notifications</strong> directly on your device using Android's notification system. These notifications are generated and delivered entirely on-device. No notification data, reminder schedules, or payment information is sent to any external server.</p>
+    </div>
+  </section>
+
+  <!-- ── THIRD-PARTY SERVICES ───────────────────────────── -->
+  <section class="policy-section">
+    <div class="section-number" aria-hidden="true">5</div>
+    <h2 class="section-title">Third-Party Services</h2>
+    <div class="section-body">
+      <p>DebtClear integrates three Google services that may collect certain technical and usage data. None of these services have access to the debt data you enter into the app.</p>
+
+      <!-- Firebase Analytics -->
+      <div class="tp-card">
+        <div class="tp-label tp-label-analytics">Analytics</div>
+        <div class="tp-card-name">Firebase Analytics (Google)</div>
+        <div class="tp-card-body">
+          <p>We use Firebase Analytics to understand how the app is used in aggregate — for example, which screens are visited most, how long sessions last, and overall app stability. Firebase may collect:</p>
+          <ul style="margin-top:8px; margin-bottom:8px;">
+            <li>App open / session duration events</li>
+            <li>Screen views and in-app navigation events</li>
+            <li>Device model, OS version, and app version</li>
+            <li>Country (derived from IP address, not stored as precise location)</li>
+            <li>A random Firebase installation ID (reset when you reinstall the app)</li>
+          </ul>
+          <p>Firebase Analytics does not receive any of the debt data, creditor names, or balances you enter.</p>
+          <p>Learn more: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">firebase.google.com/support/privacy</a></p>
+        </div>
+      </div>
+
+      <!-- Firebase Crashlytics -->
+      <div class="tp-card">
+        <div class="tp-label tp-label-crash">Crash Reporting</div>
+        <div class="tp-card-name">Firebase Crashlytics (Google)</div>
+        <div class="tp-card-body">
+          <p>Crashlytics automatically sends a crash report to us if the app crashes. This helps us identify and fix bugs. A crash report may include:</p>
+          <ul style="margin-top:8px; margin-bottom:8px;">
+            <li>Stack trace of the crash (code location only)</li>
+            <li>Device model, OS version, and app version at time of crash</li>
+            <li>Approximate time and frequency of the crash</li>
+          </ul>
+          <p>Crash reports do not contain your name, debt data, or any personally identifiable information.</p>
+          <p>Learn more: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">firebase.google.com/support/privacy</a></p>
+        </div>
+      </div>
+
+      <!-- Google AdMob -->
+      <div class="tp-card">
+        <div class="tp-label tp-label-ads">Advertising</div>
+        <div class="tp-card-name">Google AdMob (Google Mobile Ads)</div>
+        <div class="tp-card-body">
+          <p>DebtClear displays ads served by Google AdMob. To serve relevant ads, Google may collect:</p>
+          <ul style="margin-top:8px; margin-bottom:8px;">
+            <li>Google Advertising ID (GAID) — a resettable identifier on your device</li>
+            <li>Device identifiers and IP address</li>
+            <li>Ad interaction data (impressions, clicks)</li>
+            <li>General location inferred from IP address</li>
+          </ul>
+          <p>You can reset or opt out of personalized advertising at any time in your Android device settings under <strong>Privacy &rarr; Ads</strong>. If you opt out, you may still see ads, but they will not be based on your interests.</p>
+          <p>Learn more: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">policies.google.com/technologies/ads</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CHILDREN ────────────────────────────────────────── -->
+  <section class="policy-section">
+    <div class="section-number" aria-hidden="true">6</div>
+    <h2 class="section-title">Children's Privacy</h2>
+    <div class="section-body">
+      <p>DebtClear is intended for general audiences and is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has used the app in a way that raises a privacy concern, please contact us at the address below.</p>
+    </div>
+  </section>
+
+  <!-- ── YOUR RIGHTS ────────────────────────────────────── -->
+  <section class="policy-section">
+    <div class="section-number" aria-hidden="true">7</div>
+    <h2 class="section-title">Your Data Rights</h2>
+    <div class="section-body">
+      <p><strong>Deleting your debt data:</strong> Because your debt data never leaves your device, you have full control over it. There are two ways to delete all data the app has stored:</p>
+      <ul style="margin-top:8px; margin-bottom:12px;">
+        <li><strong>Clear app data:</strong> Go to <strong>Settings &rarr; Apps &rarr; DebtClear / KrediErit &rarr; Storage &rarr; Clear Data</strong>. This removes all debts, payment history, and settings while keeping the app installed.</li>
+        <li><strong>Uninstall the app:</strong> Uninstalling removes all locally stored data along with the app. Nothing remains on your device or on any server, because we never received it in the first place.</li>
+      </ul>
+      <p>We cannot delete this data for you because we do not have access to it.</p>
+      <p><strong>Analytics data:</strong> To limit data collection by Firebase Analytics, you can disable "Usage &amp; diagnostics" sharing in your Android settings. On-device, Firebase data collection can also be controlled through your device's advertising settings.</p>
+      <p><strong>Ad personalization:</strong> Go to <strong>Settings &rarr; Privacy &rarr; Ads</strong> on your Android device to reset your Advertising ID or opt out of personalized ads.</p>
+      <p>For requests related to data processed by Google's services, please refer to <a href="https://myaccount.google.com" target="_blank" rel="noopener noreferrer">myaccount.google.com</a>.</p>
+    </div>
+  </section>
+
+  <!-- ── CHANGES ─────────────────────────────────────────── -->
+  <section class="policy-section">
+    <div class="section-number" aria-hidden="true">8</div>
+    <h2 class="section-title">Changes to This Policy</h2>
+    <div class="section-body">
+      <p>We may update this Privacy Policy when we add new features or integrate new services. The effective date at the top of this page reflects the most recent revision. We recommend checking this page occasionally if you want to stay up to date.</p>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ─────────────────────────────────────────── -->
+  <section class="policy-section">
+    <div class="section-number" aria-hidden="true">9</div>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-body">
+      <p>Questions about this policy or about DebtClear / KrediErit? Reach us at:</p>
+      <p style="margin-top: 10px;">
+        <a href="mailto:hello@debtclearwith.us">hello@debtclearwith.us</a><br>
+        <a href="https://rooftop.company" target="_blank" rel="noopener noreferrer">Rooftop Online — rooftop.company</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────────── -->
+  <footer class="page-footer">
+    <p>
+      &copy; 2025 DebtClear &mdash; <a href="https://debtclearwith.us">debtclearwith.us</a><br>
+      Not a financial institution. Calculator app only.<br>
+      Developed by <a href="https://rooftop.company" target="_blank" rel="noopener noreferrer">Rooftop Online</a>
+    </p>
+  </footer>
+
+</main>
+
+</body>
+</html>
