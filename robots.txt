@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /privacy
 
 Sitemap: https://debtclearwith.us/sitemap.xml
