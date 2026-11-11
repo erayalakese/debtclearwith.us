@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f9f6">
-  <title>Debt Payoff App for Android &amp; Debt Tracker | DebtClear</title>
-  <meta name="description" content="A free debt payoff app for Android. Track loans and credit cards, compare Snowball and Avalanche, and plan around your monthly budget. Download DebtClear.">
+  <title>Debt Payoff Planner with a Fixed Monthly Budget | DebtClear</title>
+  <meta name="description" content="Plan your debt payments around a fixed monthly budget. Try the calculator to see how reusing cleared payments could reduce your interest and bring your debt-free date closer.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://debtclearwith.us/">
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -14,16 +14,16 @@
   <meta property="og:url" content="https://debtclearwith.us/">
   <meta property="og:site_name" content="DebtClear">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="DebtClear — Free Debt Payoff App for Android">
-  <meta property="og:description" content="Track credit cards and loans, record payments, and compare Snowball and Avalanche payoff plans. Free on Android. No account required.">
+  <meta property="og:title" content="DebtClear — Plan your debt payoff with a fixed monthly budget">
+  <meta property="og:description" content="See how a fixed monthly budget could help you pay off debt sooner. Try the calculator and compare estimated interest costs and payoff dates.">
   <meta property="og:image" content="https://debtclearwith.us/assets/social-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:alt" content="DebtClear: Less debt. More breathing room. With our friendly teal otter companion.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DebtClear — Free Debt Payoff App for Android">
-  <meta name="twitter:description" content="Track credit cards and loans, record payments, and build a debt payoff plan around your budget. Free on Android. No account required.">
+  <meta name="twitter:title" content="DebtClear — Plan your debt payoff with a fixed monthly budget">
+  <meta name="twitter:description" content="Keep the same monthly debt budget as each debt is paid off. Calculate how much interest you could save and when you could be debt-free.">
   <meta name="twitter:image" content="https://debtclearwith.us/assets/social-preview.png">
   <meta name="twitter:image:alt" content="DebtClear debt payoff app with a friendly teal otter companion. Less debt. More breathing room.">
   <link rel="preload" href="assets/poppins-regular.woff" as="font" type="font/woff" crossorigin>
@@ -67,8 +67,8 @@
         "@type": "WebPage",
         "@id": "https://debtclearwith.us/#webpage",
         "url": "https://debtclearwith.us/",
-        "name": "Debt Payoff App for Android & Debt Tracker | DebtClear",
-        "description": "A free debt payoff app for Android. Track loans and credit cards, compare Snowball and Avalanche, and plan around your monthly budget. Download DebtClear.",
+        "name": "Debt Payoff Planner with a Fixed Monthly Budget | DebtClear",
+        "description": "Explore a connected debt payoff calculator. Keep a steady monthly budget, roll cleared payments forward, and compare estimated interest savings and debt-free dates with DebtClear.",
         "inLanguage": "en",
         "isPartOf": {"@id": "https://debtclearwith.us/#website"},
         "publisher": {"@id": "https://debtclearwith.us/#publisher"},
@@ -96,7 +96,7 @@
         ],
         "installUrl": "https://play.google.com/store/apps/details?id=com.rooftop.kredierit",
         "sameAs": "https://play.google.com/store/apps/details?id=com.rooftop.kredierit",
-        "description": "A debt tracker and payoff planner with monthly budgets, payment records, and Snowball and Avalanche comparisons. Core tracking and calculations work offline. No account required. Contains ads.",
+        "description": "A debt payoff planner that puts a steady monthly budget to work, rolls freed payments into the next debt, and compares Snowball and Avalanche estimates. See estimated interest and a debt-free date. Core tracking and calculations work offline. No account required. Contains ads.",
         "featureList": [
           "Credit card and loan tracking",
           "Monthly debt repayment budgets",
@@ -135,7 +135,7 @@
         "@type": "FAQPage",
         "@id": "https://debtclearwith.us/#questions",
         "url": "https://debtclearwith.us/#questions",
-        "name": "Debt payoff app. Your questions.",
+        "name": "Questions about DebtClear",
         "inLanguage": "en",
         "isPartOf": {"@id": "https://debtclearwith.us/#webpage"},
         "about": {"@id": "https://debtclearwith.us/#app"},
@@ -150,13 +150,13 @@
             "@type": "Question",
             "@id": "https://debtclearwith.us/#faq-bank",
             "name": "Do I need to connect my bank?",
-            "acceptedAnswer": {"@type": "Answer", "text": "No. You enter your debts and record payments yourself. DebtClear doesn’t connect to your bank or move money. Update balances from your lender to keep your plan useful."}
+            "acceptedAnswer": {"@type": "Answer", "text": "No. You enter your debts and record payments yourself. DebtClear doesn’t connect to your bank or move money. Keep your balances in line with your lender’s statements so the estimates stay useful."}
           },
           {
             "@type": "Question",
             "@id": "https://debtclearwith.us/#faq-interest",
             "name": "What if I don’t know my interest rate?",
-            "acceptedAnswer": {"@type": "Answer", "text": "You can add a debt and start tracking payments without knowing the interest rate. Complete the rate details when you’re ready to calculate a payoff estimate. An unknown rate isn’t treated as zero interest."}
+            "acceptedAnswer": {"@type": "Answer", "text": "You can add a debt and start tracking payments without knowing the interest rate. Add the rate when you have it. You’ll need it to calculate a payoff estimate. An unknown rate isn’t treated as zero interest."}
           },
           {
             "@type": "Question",
@@ -533,9 +533,211 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
     }
+
+    /* Epic Design: masked line reveals, sticky column journey, layered parallax,
+       cascading payoff cards and a floating mascot. All calculators share one state. */
+    :root { --debt-0: #086e6a; --debt-1: #bd523b; --debt-2: #686394; }
+    .scene { position: relative; isolation: isolate; }
+    .scene > .layer { position: absolute; inset: 0; pointer-events: none; z-index: -1; }
+    .depth-0 { z-index: 0; } .depth-1 { z-index: 1; } .depth-2 { z-index: 2; }
+    .depth-3 { z-index: 3; } .depth-4 { z-index: 4; } .depth-5 { z-index: 5; }
+    .scene > .depth-0 { background: inherit; }
+    .scene > .depth-1 { background: radial-gradient(ellipse at 90% 30%, #c9e7d52b, transparent 60%); }
+    .eyebrow { display: block; color: var(--color-teal); font-size: .69rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+    .section-space { padding-block: 104px; }
+    .section-heading { max-width: 720px; margin-bottom: 42px; }
+    .section-heading p, .story-copy > p { color: var(--color-muted); margin-top: 22px; max-width: 560px; }
+    .section-heading h2 em, .story-copy h2 em { color: var(--color-teal); font-style: normal; }
+    .hero { padding-top: 36px; }
+    .hero-grid { grid-template-columns: 1.22fr 1fr; gap: 40px; }
+    h1 { font-size: clamp(3rem, 5.15vw, 4.7rem); max-width: 13ch; }
+    .hero-description { max-width: 495px; }
+    .hero-art { height: 640px; }
+    .hero-screen { width: 252px; left: 100px; top: 28px; }
+    .hero-orbit { width: 430px; height: 430px; left: -12px; top: 82px; }
+    .hero-mascot { width: 260px; left: -62px; bottom: 5px; animation: mascot-float 8s ease-in-out infinite; animation-play-state: paused; }
+    .in-view .hero-mascot, .in-view .download-art img { animation-play-state: running; }
+    .hero-sticker { right: -2px; top: 162px; max-width: 225px; color: var(--color-ink); }
+    .hero-sticker strong { display: block; font-size: 1.16rem; color: var(--color-teal); }
+    .hero-caption { bottom: 22px; left: 190px; }
+    .hero-budget { max-width: 440px; margin-top: 26px; padding: 17px 20px; border: 1px solid var(--color-rule); border-radius: 18px; background: #ffffffa6; }
+    .control-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 15px; font-size: .76rem; }
+    .control-heading output { font-size: 1.2rem; font-weight: 600; color: var(--color-teal); }
+    .hero-budget .slider { margin: 14px 0 5px; }
+    .micro { font-size: .68rem; color: var(--color-muted); }
+    .primary-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 13px 24px; background: var(--color-teal); color: white; border: 0; border-radius: 100px; font-size: .8rem; font-weight: 600; transition: transform .2s; }
+    .primary-button:hover { transform: translateY(-3px); background: var(--color-teal-hover); }
+    .primary-button .icon { width: 18px; height: 18px; }
+    .story-divider { padding: 24px 0; border-block: 1px solid var(--color-rule); }
+    .story-divider .container { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px 32px; font-size: .76rem; }
+    .story-divider b { font-weight: 600; color: var(--color-teal); }
+    .story-divider i { font-style: normal; color: var(--color-muted); }
+    .setup { background: white; }
+    .setup-heading { max-width: none; display: flex; justify-content: space-between; gap: 40px; align-items: end; }
+    .setup-heading > div { flex: 1; } .setup-heading p { max-width: 370px; flex: 0 1 370px; }
+    .debt-editor { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .debt-card { padding: 25px; background: var(--color-paper); border: 1px solid var(--color-rule); border-radius: 22px; border-top: 3px solid var(--debt-color); }
+    .debt-card h3 { font-size: .98rem; margin-bottom: 22px; display: flex; gap: 12px; align-items: center; }
+    .debt-number { display: inline-grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--debt-color); border-radius: 50%; font-size: .67rem; color: var(--debt-color); }
+    .debt-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 18px; }
+    .debt-field:first-child { grid-column: 1 / -1; }
+    .debt-field label { display: block; font-size: .66rem; color: var(--color-muted); margin-bottom: 6px; }
+    .input-wrap { display: flex; align-items: center; gap: 5px; border-bottom: 1px solid var(--color-rule); }
+    .input-wrap span { font-size: .85rem; color: var(--color-muted); }
+    .input-wrap input { min-width: 0; width: 100%; background: transparent; border: 0; color: var(--color-ink); font-size: 1rem; padding: 7px 0; border-radius: 3px; }
+    .debt-field:first-child input { font-size: 1.8rem; letter-spacing: -.04em; }
+    .setup-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; margin-top: 25px; }
+    .plain-button { background: transparent; border: 0; text-decoration: underline; text-underline-offset: 5px; padding: 10px 0; font-size: .73rem; }
+    .validation { padding: 14px 18px; background: #fff0e7; border-left: 3px solid #bd523b; margin-top: 22px; color: #7e3324; font-size: .8rem; }
+    .plan-budget { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 46px; padding-top: 35px; border-top: 1px solid var(--color-rule); }
+    .plan-budget h3 { font-size: 1.3rem; margin-bottom: 9px; letter-spacing: -.04em; }
+    .budget-split { display: flex; justify-content: space-between; font-size: .73rem; margin-top: 20px; gap: 20px; }
+    .budget-split b { display: block; font-size: 1.1rem; margin-top: 3px; }
+    .budget-split > :last-child { text-align: right; color: var(--color-teal); }
+    .snowball-story { background: var(--color-dark); color: var(--color-on-dark); overflow: clip; }
+    .snowball-story .eyebrow { color: #b4e1ce; }
+    .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 75px; align-items: start; }
+    .story-copy { position: sticky; top: 130px; }
+    .snowball-story .story-copy > p { color: var(--color-muted-dark); }
+    .snowball-story h2 em { color: #b4e1ce; }
+    .story-copy .mascot-aside { width: 154px; margin-top: 32px; filter: drop-shadow(0 15px 15px #0002); }
+    .mascot-quote { font-size: .75rem; max-width: 280px; padding-left: 20px; border-left: 2px solid var(--color-coral); color: #d4eadd; margin-top: 16px; }
+    .flow-card { border: 1px solid #ffffff29; background: #ffffff08; border-radius: 26px; padding: 30px; }
+    .flow-card .control-heading output { color: #b4e1ce; }
+    .month-controls { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
+    .month-controls .slider { flex: 1; min-width: 0; margin: 10px; }
+    .round-button { flex-shrink: 0; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: transparent; color: inherit; border: 1px solid #ffffff60; font-size: 1.1rem; }
+    .round-button:disabled { opacity: .35; cursor: default; }
+    .allocation { margin-top: 28px; }
+    .allocation-line { display: flex; justify-content: space-between; gap: 15px; font-size: .77rem; margin-bottom: 9px; }
+    .allocation-line small { color: #b4cfc5; }
+    .allocation-track { display: flex; height: 18px; overflow: hidden; border-radius: 6px; background: #ffffff0d; }
+    .allocation-track span { min-width: 0; background: #8db9aa; }
+    .allocation-track .allocation-extra { background: #f2b49a; }
+    .allocation-note { margin-top: 8px; font-size: .65rem; color: #c0d6cc; }
+    .flow-equation { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 12px; border-top: 1px solid #ffffff25; padding-top: 25px; margin-top: 28px; text-align: center; }
+    .flow-equation strong { display: block; font-size: 1.3rem; color: #f4c2ab; }
+    .flow-equation small { display: block; font-size: .6rem; line-height: 1.6; color: #c0d6cc; margin-top: 5px; }
+    .flow-event { font-size: .8rem; color: #d5ecdf; margin-top: 26px; }
+    .flow-legend { display: flex; gap: 25px; margin-top: 20px; font-size: .65rem; color: #c0d6cc; }
+    .legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; background: #8db9aa; }
+    .legend-dot.extra { background: #f2b49a; }
+    .milestones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+    .milestone { padding: 18px; border: 1px solid #ffffff29; border-radius: 16px; }
+    .milestone span { display: block; font-size: .63rem; color: #c0d6cc; }
+    .milestone b { display: block; font-size: .83rem; margin-top: 7px; font-weight: 600; }
+    .milestone small { font-size: .6rem; color: #f4c2ab; }
+    .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .strategy-card { text-align: left; border: 1px solid var(--color-rule); border-radius: 24px; background: white; padding: 30px; position: relative; transition: transform .25s; }
+    .strategy-card:hover { transform: translateY(-4px); }
+    .strategy-card[aria-pressed="true"] { border: 2px solid var(--color-teal); padding: 29px; background: #edf7f0; }
+    .strategy-card h3 { font-size: 1.35rem; margin-block: 15px 8px; }
+    .strategy-card p { font-size: .8rem; color: var(--color-muted); max-width: 390px; }
+    .strategy-icon { font-size: 1.5rem; }
+    .strategy-choice { position: absolute; top: 28px; right: 28px; border: 1px solid var(--color-rule); width: 22px; height: 22px; border-radius: 50%; }
+    [aria-pressed="true"] > .strategy-choice { border: 6px solid var(--color-teal); background: white; }
+    .strategy-stats { display: flex; gap: 35px; border-top: 1px solid var(--color-rule); padding-top: 20px; margin-top: 24px; }
+    .strategy-stats span { display: block; font-size: .65rem; color: var(--color-muted); }
+    .strategy-stats b { display: block; font-size: 1rem; margin-top: 4px; font-weight: 600; }
+    .strategy-verdict { font-size: .78rem; color: var(--color-teal); margin-top: 24px; }
+    .results { background: #e7f2e9; }
+    .results-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+    .results-heading p { max-width: 320px; color: var(--color-muted); font-size: .85rem; }
+    .results-heading h2 em, .commitment-grid h2 em { font-style: normal; color: var(--color-teal); }
+    .big-results { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 32px; margin-block: 45px; }
+    .big-result { border-left: 1px solid #b5cfc0; padding-left: 24px; }
+    .big-result:first-child { padding-left: 0; border: 0; }
+    .big-result span { font-size: .7rem; color: var(--color-muted); }
+    .big-result strong { display: block; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.2; letter-spacing: -.06em; font-weight: 600; color: var(--color-teal); margin: 13px 0; }
+    .big-result p { font-size: .7rem; color: var(--color-muted); }
+    .chart-card { background: #ffffffae; border: 1px solid #d0dfd3; border-radius: 24px; padding: 28px; }
+    .chart-header { display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; font-size: .78rem; }
+    .chart-legend { display: flex; gap: 22px; font-size: .65rem; color: var(--color-muted); }
+    .chart-legend i { display: inline-block; height: 3px; width: 18px; vertical-align: middle; margin-right: 7px; background: var(--color-teal); }
+    .chart-legend .baseline-key { background: #a76c5c; }
+    .debt-chart { width: 100%; height: auto; margin-top: 20px; overflow: visible; }
+    .chart-grid { stroke: #d9e3d9; stroke-width: 1; }
+    .chart-label { fill: #53655c; font-family: inherit; font-size: 11px; }
+    .chart-line { fill: none; stroke: var(--color-teal); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+    .chart-line.baseline { stroke: #a76c5c; stroke-width: 2; stroke-dasharray: 6 6; }
+    .chart-budget { display: flex; gap: 30px; align-items: center; border-top: 1px solid var(--color-rule); padding-top: 20px; }
+    .chart-budget .control-heading { flex: 1; }
+    .chart-budget .slider { width: 47%; margin: 8px 0; }
+    .result-cta { display: flex; align-items: center; justify-content: space-between; gap: 25px; margin-top: 30px; }
+    .result-cta p { font-size: .8rem; max-width: 520px; }
+    .assumptions { margin-top: 28px; font-size: .68rem; color: var(--color-muted); }
+    .assumptions summary { display: inline-block; padding-block: 10px; text-decoration: underline; text-underline-offset: 5px; }
+    .assumptions p { margin-top: 10px; max-width: 900px; line-height: 1.9; }
+    .commitment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .commitment-switch { display: flex; padding: 5px; border: 1px solid var(--color-rule); border-radius: 14px; gap: 5px; margin-top: 30px; background: white; }
+    .commitment-switch button { flex: 1; border: 0; background: transparent; padding: 12px; border-radius: 10px; font-size: .72rem; }
+    .commitment-switch [aria-pressed="true"] { background: var(--color-teal); color: white; }
+    .commitment-receipt { background: white; border: 1px solid var(--color-rule); border-radius: 24px; padding: 35px; box-shadow: 0 20px 50px #183c2b07; }
+    .receipt-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--color-rule); font-size: .8rem; }
+    .receipt-row strong { font-size: 1.2rem; font-weight: 600; color: var(--color-teal); }
+    .receipt-note { font-size: .75rem; margin-top: 24px; color: var(--color-muted); }
+    .commitment-receipt .eyebrow { margin-bottom: 6px; }
+    .tour { padding-block: 100px; }
+    .tour-bottom { color: var(--color-teal); }
+    .tour-personal { margin-top: 25px; border-top: 1px solid var(--color-rule); padding-top: 22px; font-size: .8rem; }
+    .tour-personal b { color: var(--color-teal); }
+    .tour-personal .text-link { display: flex; }
+    .download-inner { position: relative; }
+    .download-art img { animation: mascot-float 10s ease-in-out infinite; animation-play-state: paused; }
+    .download-estimate { font-size: .8rem; margin-top: 22px; max-width: 430px; }
+    .plan-dock { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); width: min(850px, calc(100% - 32px)); z-index: 35; border: 1px solid #d8e8dd; border-radius: 20px; padding: 12px 16px 12px 24px; background: #fcfffcf5; box-shadow: 0 8px 45px #173e2520; backdrop-filter: blur(15px); display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .dock-stat { font-size: .61rem; color: var(--color-muted); }
+    .dock-stat b { display: block; font-size: .88rem; color: var(--color-teal); font-weight: 600; }
+    .plan-dock .primary-button { min-height: 42px; font-size: .7rem; padding: 11px 20px; }
+    .footer { padding-bottom: 135px; }
+    .motion-toggle { font-size: .65rem; background: transparent; border: 1px solid var(--color-rule); padding: 6px 12px; border-radius: 100px; margin-top: 15px; }
+    .no-motion *, .no-motion *::before, .no-motion *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .scene:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 700px; }
+    @keyframes mascot-float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-12px) rotate(1deg); } }
+    @media (max-width: 1050px) {
+      .hero-screen { left: 60px; } .hero-sticker { right: -8px; top: 130px; }
+      .hero-orbit { width: 360px; height: 360px; } .hero-mascot { left: -45px; width: 225px; }
+      .hero-caption { left: 165px; } .story-grid { gap: 35px; } .commitment-grid { gap: 40px; }
+      .debt-card { padding: 20px; } .flow-card { padding: 23px; }
+    }
+    @media (max-width: 760px) {
+      .container { width: calc(100% - 40px); } .nav { min-height: 74px; } .nav-links { display: none; }
+      .nav-cta { font-size: .7rem; padding: 10px 15px; } .section-space { padding-block: 70px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 0; } .hero-copy { padding-bottom: 12px; }
+      h1 { max-width: 13ch; font-size: clamp(2.9rem, 10vw, 4.6rem); }
+      .hero-description { max-width: 540px; } .hero-art { height: 490px; width: min(390px, 100%); margin-inline: auto; }
+      .hero-screen { width: 195px; left: 99px; top: 20px; } .hero-orbit { width: 310px; height: 310px; left: 25px; top: 75px; }
+      .hero-mascot { width: 200px; left: -10px; bottom: 3px; } .hero-sticker { right: 0; top: 120px; font-size: .6rem; padding: 12px; }
+      .hero-sticker strong { font-size: 1rem; } .hero-caption { left: 181px; bottom: 12px; font-size: .55rem; }
+      .reassurance { flex-wrap: wrap; justify-content: center; gap: 12px 20px; font-size: .63rem; }
+      .setup-heading { display: block; } .setup-heading p { margin-top: 20px; max-width: 540px; }
+      .debt-editor { grid-template-columns: 1fr; gap: 14px; } .debt-fields { grid-template-columns: 1.2fr 1fr 1fr; gap: 14px; }
+      .debt-field:first-child { grid-column: auto; } .debt-field:first-child input { font-size: 1.3rem; }
+      .debt-card h3 { margin-bottom: 16px; } .plan-budget { grid-template-columns: 1fr; gap: 25px; }
+      .story-grid, .commitment-grid { grid-template-columns: 1fr; gap: 32px; } .story-copy { position: static; }
+      .story-copy .mascot-aside { display: none; } .mascot-quote { max-width: 100%; margin-top: 24px; }
+      .strategy-grid { grid-template-columns: 1fr; } .results-heading { display: block; } .results-heading p { margin-top: 20px; max-width: 540px; }
+      .big-results { gap: 15px; grid-template-columns: 1fr 1fr; } .big-result:first-child { grid-column: 1/-1; }
+      .big-result:nth-child(2) { padding-left: 0; border: 0; } .big-result strong { font-size: 2.1rem; }
+      .chart-card { padding: 20px 14px; } .chart-budget { display: block; } .chart-budget .slider { width: 100%; margin-top: 16px; }
+      .result-cta { flex-direction: column; align-items: start; } .milestones { gap: 8px; } .milestone { padding: 13px 10px; }
+      .milestone b { font-size: .7rem; } .milestone span, .milestone small { font-size: .58rem; }
+      .flow-equation { gap: 6px; } .flow-equation strong { font-size: 1.15rem; } .flow-equation small { font-size: .56rem; }
+      .commitment-receipt { padding: 25px; } .plan-dock { bottom: 10px; padding: 12px 14px; gap: 12px; border-radius: 16px; }
+      .dock-budget, .dock-interest { display: none; } .plan-dock .primary-button { font-size: .65rem; padding-inline: 14px; }
+      .download-inner { padding: 40px 24px; } .download-art { opacity: .9; }
+      .footer-bottom { display: block; } .footer-bottom p + p { margin-top: 12px; }
+    }
+    @media (pointer: coarse) { .hero-mascot, .download-art img { animation: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
   </style>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
 <body>
+  <!-- Epic Design techniques: layered parallax, masked text reveal, sticky story, floating mascot. -->
   <a class="skip-link" href="#main">Skip to content</a>
   <svg class="sr-only" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
     <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
@@ -551,33 +753,40 @@
   <header class="header">
     <nav class="nav container" aria-label="Main navigation">
       <a class="wordmark" href="#main" aria-label="DebtClear home"><img src="assets/app-icon.webp" alt="" width="37" height="37">DebtClear</a>
-      <div class="nav-links"><a href="#the-app">The app</a><a href="#your-plan">Your plan</a><a href="#questions">FAQs</a></div>
+      <div class="nav-links"><a href="#your-plan">Try your plan</a><a href="#snowball">How it works</a><a href="#the-app">The app</a><a href="#questions">FAQs</a></div>
       <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.rooftop.kredierit" data-store-link="navigation" target="_blank" rel="noopener noreferrer">Get the app <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
     </nav>
   </header>
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="scene hero" aria-labelledby="hero-title">
+      <div class="layer depth-0" data-depth="0" aria-hidden="true"></div><div class="layer depth-1" data-depth="1" aria-hidden="true"></div>
       <div class="hero-grid container">
-        <div class="hero-copy">
-          <p class="hero-intro">Your debt payoff app for Android</p>
-          <h1 id="hero-title">Debt payoff.<br><span>More breathing room.</span></h1>
-          <p class="hero-description">DebtClear is a free debt payoff app for Android. Track credit cards and loans, record payments, and build a plan around your monthly budget. One step at a time.</p>
+        <div class="hero-copy depth-4" data-depth="4">
+          <p class="hero-intro">Debt payoff planner for Android</p>
+          <h1 id="hero-title">Plan your debt payoff<br><span>with a fixed<br>monthly budget.</span></h1>
+          <p class="hero-description">Set a monthly budget you can afford. DebtClear plans your payments so that when one debt is paid off, its payment goes towards the next. See when you could be debt-free and how much interest you could save.</p>
+          <div class="hero-budget" data-depth="4">
+            <div class="control-heading"><label for="hero-budget">Try a monthly debt budget</label><output for="hero-budget" data-value="budget">$900</output></div>
+            <input class="slider" id="hero-budget" data-budget type="range" min="700" max="2000" step="25" value="900" aria-describedby="hero-budget-help" disabled>
+            <p class="micro" id="hero-budget-help">Move the slider. The estimates update throughout the page.</p>
+          </div>
           <div class="hero-actions">
             <a class="store-button" href="https://play.google.com/store/apps/details?id=com.rooftop.kredierit" data-store-link="hero" target="_blank" rel="noopener noreferrer" aria-label="Download DebtClear on Google Play"><svg aria-hidden="true"><use href="#play"/></svg><span><small>GET IT ON</small><strong>Google Play</strong></span></a>
-            <a class="text-link" href="#the-app">Take a look <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+            <a class="primary-button" href="#your-plan">Try the calculator <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
           </div>
           <p class="hero-note">Free on Android <span aria-hidden="true">&nbsp;·&nbsp;</span> No account needed</p>
+          <p class="micro" style="margin-top:14px">*Compared with paying only regular instalments, without reusing cleared payments.</p>
           <div class="play-rating">
             <a class="play-rating-link" href="https://play.google.com/store/apps/details?id=com.rooftop.kredierit" data-store-link="rating" target="_blank" rel="noopener noreferrer" aria-label="Rated 4.1 out of 5 on Google Play. View the app and reviews."><span class="rating-star" aria-hidden="true">★</span><strong title="Google Play Console rating: 4.111 out of 5">4.1<span>/5</span></strong><span>on Google Play</span><svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a>
             <p class="rating-counts">9 ratings <span aria-hidden="true">·</span> 3 written reviews<br>Reported <time datetime="2026-11-03">November 3, 2026</time></p>
           </div>
         </div>
-        <div class="hero-art">
-          <div class="hero-orbit" aria-hidden="true"></div>
-          <figure class="hero-screen"><img src="assets/app-home.webp" alt="DebtClear home screen with an estimated finish date, next payment, and monthly budget. Sample data." width="780" height="1688" fetchpriority="high"></figure>
-          <img class="hero-mascot" src="assets/otter.webp" alt="A friendly teal otter with a coral scarf, waving hello." width="680" height="680" decoding="async">
-          <div class="hero-sticker" aria-hidden="true"><svg class="icon"><use href="#check"/></svg><p>Less guessing.<br><strong>More clarity.</strong></p></div>
-          <p class="hero-caption">Real app. A simpler view.</p>
+        <div class="hero-art depth-3" data-depth="3">
+          <div class="hero-orbit depth-2" data-depth="2" aria-hidden="true"></div>
+          <figure class="hero-screen depth-3" data-depth="3"><img src="assets/app-home.webp" alt="DebtClear home screen with an estimated finish date, next payment, and monthly budget. Sample data." width="780" height="1688" fetchpriority="high"></figure>
+          <img class="hero-mascot depth-3" data-depth="3" src="assets/otter.webp" alt="A friendly teal otter with a coral scarf, waving hello." width="680" height="680" decoding="async">
+          <div class="hero-sticker" data-depth="5"><svg class="icon"><use href="#check"/></svg><p>With this example plan<br><strong><span data-value="savedMonths">—</span> months sooner</strong><span data-value="savings">—</span> less interest*</p></div>
+          <p class="hero-caption">App screen · sample data</p>
         </div>
       </div>
       <div class="reassurance container">
@@ -587,8 +796,56 @@
       </div>
     </section>
 
-    <section class="tour" id="the-app" aria-labelledby="tour-title">
-      <div class="tour-grid container">
+
+    <div class="story-divider"><div class="container"><b>Set your budget.</b><i aria-hidden="true">→</i><span>Clear a debt.</span><i aria-hidden="true">→</i><span>Add its payment to the next debt.</span><i aria-hidden="true">→</i><b>Keep going until you’re debt-free.</b></div></div>
+
+    <!-- 01 / A shared scenario: edits here power every section below. -->
+    <section class="scene setup section-space" id="your-plan" aria-labelledby="setup-title">
+      <div class="layer depth-0" data-depth="0" aria-hidden="true"></div><div class="layer depth-1" data-depth="1" aria-hidden="true"></div>
+      <div class="container" data-depth="4">
+        <div class="section-heading setup-heading"><div><span class="eyebrow">01 / Your debts and monthly budget</span><h2 id="setup-title">Enter your debts.<br><em>Set your monthly budget.</em></h2></div><p>Start with these three example debts, or enter your own balances, rates and payments. Then choose the total amount you can put towards debt each month.</p></div>
+        <div class="debt-editor"><article class="debt-card" style="--debt-color:var(--debt-0)"><h3><span class="debt-number" aria-hidden="true">01</span>Credit card</h3><div class="debt-fields"><div class="debt-field"><label for="debt-0-balance">Balance</label><div class="input-wrap"><span aria-hidden="true">$</span><input id="debt-0-balance" data-debt="0" data-field="balance" type="number" min="0" max="1000000" step="any" value="8000" inputmode="decimal" aria-label="Credit card balance" disabled><span aria-hidden="true"></span></div></div><div class="debt-field"><label for="debt-0-apr">Annual rate (APR)</label><div class="input-wrap"><span aria-hidden="true"></span><input id="debt-0-apr" data-debt="0" data-field="apr" type="number" min="0" max="100" step="any" value="24" inputmode="decimal" aria-label="Credit card annual rate (apr)" disabled><span aria-hidden="true">%</span></div></div><div class="debt-field"><label for="debt-0-payment">Monthly payment</label><div class="input-wrap"><span aria-hidden="true">$</span><input id="debt-0-payment" data-debt="0" data-field="payment" type="number" min="1" max="100000" step="any" value="300" inputmode="decimal" aria-label="Credit card monthly payment" disabled><span aria-hidden="true"></span></div></div></div></article><article class="debt-card" style="--debt-color:var(--debt-1)"><h3><span class="debt-number" aria-hidden="true">02</span>Personal loan</h3><div class="debt-fields"><div class="debt-field"><label for="debt-1-balance">Balance</label><div class="input-wrap"><span aria-hidden="true">$</span><input id="debt-1-balance" data-debt="1" data-field="balance" type="number" min="0" max="1000000" step="any" value="6000" inputmode="decimal" aria-label="Personal loan balance" disabled><span aria-hidden="true"></span></div></div><div class="debt-field"><label for="debt-1-apr">Annual rate (APR)</label><div class="input-wrap"><span aria-hidden="true"></span><input id="debt-1-apr" data-debt="1" data-field="apr" type="number" min="0" max="100" step="any" value="15" inputmode="decimal" aria-label="Personal loan annual rate (apr)" disabled><span aria-hidden="true">%</span></div></div><div class="debt-field"><label for="debt-1-payment">Monthly payment</label><div class="input-wrap"><span aria-hidden="true">$</span><input id="debt-1-payment" data-debt="1" data-field="payment" type="number" min="1" max="100000" step="any" value="250" inputmode="decimal" aria-label="Personal loan monthly payment" disabled><span aria-hidden="true"></span></div></div></div></article><article class="debt-card" style="--debt-color:var(--debt-2)"><h3><span class="debt-number" aria-hidden="true">03</span>Small loan</h3><div class="debt-fields"><div class="debt-field"><label for="debt-2-balance">Balance</label><div class="input-wrap"><span aria-hidden="true">$</span><input id="debt-2-balance" data-debt="2" data-field="balance" type="number" min="0" max="1000000" step="any" value="2000" inputmode="decimal" aria-label="Small loan balance" disabled><span aria-hidden="true"></span></div></div><div class="debt-field"><label for="debt-2-apr">Annual rate (APR)</label><div class="input-wrap"><span aria-hidden="true"></span><input id="debt-2-apr" data-debt="2" data-field="apr" type="number" min="0" max="100" step="any" value="9" inputmode="decimal" aria-label="Small loan annual rate (apr)" disabled><span aria-hidden="true">%</span></div></div><div class="debt-field"><label for="debt-2-payment">Monthly payment</label><div class="input-wrap"><span aria-hidden="true">$</span><input id="debt-2-payment" data-debt="2" data-field="payment" type="number" min="1" max="100000" step="any" value="150" inputmode="decimal" aria-label="Small loan monthly payment" disabled><span aria-hidden="true"></span></div></div></div></article></div>
+        <div class="setup-footer"><p class="micro">All figures in USD · Changes stay in this browser session · No signup</p><button class="plain-button" id="reset-example" type="button">Reset example</button></div>
+        <div class="plan-budget"><div><h3>How much can you pay towards debt each month?</h3><p class="micro">Your budget covers all regular payments first. The rest goes towards the debt you choose to pay off first. Keep the same total budget as debts are paid off.</p></div><div><div class="control-heading"><label for="plan-budget">My monthly debt budget</label><output for="plan-budget" data-value="budget">$900</output></div><input id="plan-budget" class="slider" data-budget type="range" min="700" max="2000" step="25" value="900" disabled><div class="budget-split"><p>Regular payments<b data-value="minimum">$700</b></p><p>Extra debt payment<b data-value="extra">$200</b></p></div></div></div>
+        <p class="validation" id="input-error" role="alert" hidden></p>
+        <noscript><p class="validation">Turn on JavaScript to use the calculators. You can also read about DebtClear and download the app below.</p></noscript>
+      </div>
+    </section>
+
+    <!-- 02 / Sticky narrative, live monthly allocations and cascading payoff milestones. -->
+    <section class="scene snowball-story section-space" id="snowball" aria-labelledby="snowball-title">
+      <div class="layer depth-0" data-depth="0" aria-hidden="true"></div><div class="layer depth-1" data-depth="1" aria-hidden="true"></div>
+      <div class="container story-grid" data-depth="4">
+        <div class="story-copy"><span class="eyebrow">02 / How payments roll forward</span><h2 id="snowball-title">When one debt ends,<br><em>put its payment<br>towards the next.</em></h2><p>When you finish paying a debt, add its monthly payment to the next debt instead of reducing your budget. That debt now receives its regular payment, your original extra amount and the payment from the debt you cleared.</p><p>Your total monthly budget stays the same. More of it goes towards the debts that remain.</p><img class="mascot-aside" src="assets/otter.webp" width="680" height="680" alt="" aria-hidden="true" loading="lazy" decoding="async" data-depth="3"><p class="mascot-quote">“Paid off one debt? Add its payment to the next.”</p></div>
+        <div><div class="flow-card"><div class="control-heading"><label for="month-slider">Choose a month to see its payments</label><output id="month-label" for="month-slider">Month 1</output></div><div class="month-controls"><button class="round-button" id="month-back" type="button" aria-label="Previous month">←</button><input class="slider" id="month-slider" type="range" min="1" max="60" value="1" disabled><button class="round-button" id="month-next" type="button" aria-label="Next month">→</button></div><p class="micro" id="flow-date" style="color:#c0d6cc">—</p><div id="allocations"></div><div class="flow-legend"><span><i class="legend-dot" aria-hidden="true"></i>Regular payment</span><span><i class="legend-dot extra" aria-hidden="true"></i>Extra and reused payments</span></div><div class="flow-equation"><div><strong data-value="extra">—</strong><small>Monthly extra</small></div><span aria-hidden="true">+</span><div><strong id="freed-payment">—</strong><small>From cleared debts*</small></div><span aria-hidden="true">=</span><div><strong id="extra-power">—</strong><small>Extra debt payment</small></div></div><p class="flow-event" id="flow-event">—</p><p class="micro" style="color:#c0d6cc;margin-top:14px">*Includes the part of a final payment that a debt no longer needs. Once all debts are paid off, any unused budget stays with you.</p><button class="plain-button" id="jump-milestone" type="button">Show when the first debt is paid off →</button></div><div class="milestones" id="milestones"></div></div>
+      </div>
+    </section>
+
+    <!-- 03 / Same inputs, two priorities. Strategy selection updates the whole story. -->
+    <section class="scene section-space" id="strategies" aria-labelledby="strategy-title">
+      <div class="layer depth-0" data-depth="0" aria-hidden="true"></div><div class="layer depth-1" data-depth="1" aria-hidden="true"></div>
+      <div class="container" data-depth="4"><div class="section-heading"><span class="eyebrow">03 / Compare repayment strategies</span><h2 id="strategy-title">Choose which debt<br><em>to pay off first.</em></h2><p>In both plans, you make every regular payment and reuse the payments from cleared debts. Choose which debt receives the extra money first. The estimates across the page will update.</p></div><div class="strategy-grid">
+        <button class="strategy-card" data-strategy="avalanche" aria-pressed="true" type="button"><span class="strategy-icon" aria-hidden="true">↘</span><span class="strategy-choice" aria-hidden="true"></span><h3>Avalanche</h3><p>Pay extra towards the debt with the highest interest rate first. This aims to reduce the interest you pay overall.</p><div class="strategy-stats"><div><span>Estimated finish</span><b data-value="avalancheFinish">—</b></div><div><span>Total interest</span><b data-value="avalancheInterest">—</b></div></div></button>
+        <button class="strategy-card" data-strategy="snowball" aria-pressed="false" type="button"><span class="strategy-icon" aria-hidden="true">◉</span><span class="strategy-choice" aria-hidden="true"></span><h3>Snowball</h3><p>Pay extra towards your smallest debt first. Clearing it sooner can help you stay motivated for the next one.</p><div class="strategy-stats"><div><span>Estimated finish</span><b data-value="snowballFinish">—</b></div><div><span>Total interest</span><b data-value="snowballInterest">—</b></div></div></button>
+      </div><p class="strategy-verdict" id="strategy-verdict">—</p></div>
+    </section>
+
+    <!-- 04 / The reward: a real amortization chart, interest difference and finish date. -->
+    <section class="scene results section-space" id="your-freedom" aria-labelledby="results-title">
+      <div class="layer depth-0" data-depth="0" aria-hidden="true"></div><div class="layer depth-1" data-depth="1" aria-hidden="true"></div><div class="container" data-depth="4">
+      <div class="results-heading"><div><span class="eyebrow">04 / Your estimated results</span><h2 id="results-title">See your interest savings<br><em>and debt-free date.</em></h2></div><p>Here’s what your selected budget and payment order could change, compared with making regular payments only.</p></div>
+      <div class="big-results"><div class="big-result"><span>Your estimated debt-free month</span><strong data-value="finish">—</strong><p>With <span data-value="budget">—</span>/month · <span data-value="strategy">Avalanche</span></p></div><div class="big-result"><span>Estimated interest saved</span><strong data-value="savings">—</strong><p>Less interest than regular payments only</p></div><div class="big-result"><span>How much sooner you could finish</span><strong><span data-value="savedMonths" style="font:inherit;color:inherit">—</span> <span style="font-size:.45em;color:inherit">months</span></strong><p>Earlier than <span data-value="baselineFinish">—</span></p></div></div>
+      <div class="chart-card"><div class="chart-header"><strong>Your remaining debt over time</strong><div class="chart-legend"><span><i class="baseline-key" aria-hidden="true"></i>Regular payments only</span><span><i aria-hidden="true"></i>Your steady-budget plan</span></div></div><svg class="debt-chart" viewBox="0 0 920 280" role="img" aria-labelledby="chart-title chart-description"><title id="chart-title">Remaining debt over time</title><desc id="chart-description">Your selected plan compared with regular payments only.</desc><g id="chart-grid"></g><path id="chart-area" fill="#c8e4d360"></path><path class="chart-line baseline" id="baseline-path"></path><path class="chart-line" id="plan-path"></path><g id="chart-labels"></g></svg><div class="chart-budget"><div class="control-heading"><label for="results-budget">Adjust your monthly budget</label><output for="results-budget" data-value="budget">$900</output></div><input class="slider" id="results-budget" data-budget type="range" min="700" max="2000" step="25" value="900" disabled></div></div>
+      <div class="result-cta"><p><strong>Ready to plan your own repayments?</strong> Add your debts in DebtClear, compare payment orders and keep track of what to pay each month.</p><a class="primary-button" href="https://play.google.com/store/apps/details?id=com.rooftop.kredierit" target="_blank" rel="noopener noreferrer" data-store-link="results">Create my plan in DebtClear <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a></div>
+      <details class="assumptions"><summary>How these estimates are calculated</summary><p>The example starts in <span data-value="start">—</span>. Interest is applied monthly at APR ÷ 12, before payments. The calculator covers regular payments on all remaining debts first. It then uses the rest of your budget to make extra payments in your chosen order. Payment order is set from the starting balances and rates. Money left over when a debt is paid off goes towards the next debt in the same month. The comparison uses only the regular payments you entered. It adds no extra money and does not reuse payments from debts that have been paid off. Your selected plan keeps the full monthly budget until all debts are paid off. The final month may need less.</p><p>These estimates assume you make every planned payment, with no new borrowing, fees, penalties or rate changes. Lenders may use different interest calculations and early repayment terms. APR here is annual; the app lets you enter monthly rate details. The calculator uses the numbers entered on this page. App screenshots show a separate example. Results are rounded for display; calculations keep full precision. Plans are simulated for up to 600 months. Neither this page nor the app makes payments for you.</p></details>
+    </div></section>
+
+    <!-- 05 / A fair counterfactual: both paths start with the same extra payment. -->
+    <section class="scene section-space" id="commitment" aria-labelledby="commitment-title">
+      <div class="layer depth-0" data-depth="0" aria-hidden="true"></div><div class="layer depth-1" data-depth="1" aria-hidden="true"></div><div class="container commitment-grid" data-depth="4"><div><span class="eyebrow">05 / Keep or reduce your budget</span><h2 id="commitment-title">Pay off debts sooner<br><em>by keeping your budget steady.</em></h2><p style="margin-top:22px;color:var(--color-muted)">After a debt is paid off, you can keep putting the same total amount towards your remaining debts or spend the freed money elsewhere. Compare the two to see how that choice affects interest and your payoff date.</p><div class="commitment-switch" role="group" aria-label="Explore keeping or reducing your budget"><button type="button" data-commitment="keep" aria-pressed="true">Keep my budget steady</button><button type="button" data-commitment="release" aria-pressed="false">Spend the freed money</button></div><p class="micro" style="margin-top:15px">These buttons update this comparison. The rest of the page keeps your selected plan.</p></div><div class="commitment-receipt"><span class="eyebrow" id="commitment-label">Keeping the same monthly budget</span><div class="receipt-row"><span>Debt-free month</span><strong id="commitment-finish">—</strong></div><div class="receipt-row"><span>Total interest</span><strong id="commitment-interest">—</strong></div><div class="receipt-row"><span>Monthly budget</span><strong id="commitment-budget">—</strong></div><p class="receipt-note" id="commitment-note">—</p><a class="text-link" href="https://play.google.com/store/apps/details?id=com.rooftop.kredierit" data-store-link="commitment" target="_blank" rel="noopener noreferrer">Plan my payments in DebtClear <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a></div></div></section>
+    <section class="scene tour" id="the-app" aria-labelledby="tour-title">
+      <div class="layer depth-0" data-depth="0" aria-hidden="true"></div><div class="layer depth-1" data-depth="1" aria-hidden="true"></div>
+      <div class="tour-grid container depth-4" data-depth="4">
         <div class="tour-visual">
           <figure class="screen-panel" id="screen-home" role="tabpanel" aria-labelledby="tab-home" tabindex="0"><img src="assets/app-home.webp" alt="Home screen showing your estimated payoff month and the next payment to record." width="780" height="1688" loading="lazy" decoding="async"><figcaption>Home · Real app screen, sample data</figcaption></figure>
           <figure class="screen-panel" id="screen-plan" role="tabpanel" aria-labelledby="tab-plan" tabindex="0"><img src="assets/app-plan.webp" alt="My plan screen with monthly budget, payment order, extra payments, and plan comparison." width="780" height="1688" loading="lazy" decoding="async"><figcaption>My plan · Real app screen, sample data</figcaption></figure>
@@ -596,67 +853,37 @@
           <figure class="screen-panel" id="screen-debt" role="tabpanel" aria-labelledby="tab-debt" tabindex="0"><img src="assets/app-add-debt.webp" alt="Add debt form for entering a balance and monthly payment, with optional interest details." width="780" height="1688" loading="lazy" decoding="async"><figcaption>Add a debt · Real app screen, sample data</figcaption></figure>
         </div>
         <div class="tour-copy">
-          <h2 id="tour-title">Debt tracking,<br>without the clutter.</h2>
-          <p>A debt tracker app for your balances, due dates, and payment history. See where you are and what comes next, with no bank login or spreadsheet to maintain.</p>
+          <h2 id="tour-title">Manage your debt payments<br>and payoff plan in one app.</h2>
+          <p>Use DebtClear to keep your plan up to date. Add your debts, set your budget and choose a payment order. Record each payment as you make it.</p>
           <div class="tour-tabs" role="tablist" aria-label="Explore DebtClear screens" aria-orientation="vertical">
-            <button class="tour-tab" role="tab" id="tab-home" aria-controls="screen-home" aria-selected="true" tabindex="0" type="button"><span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#check"/></svg></span><span><span class="tab-title">Know your next step</span><span class="tab-description">See your next payment at a glance. Record it when it’s done.</span></span><svg class="icon tab-arrow" aria-hidden="true"><use href="#arrow"/></svg></button>
-            <button class="tour-tab" role="tab" id="tab-plan" aria-controls="screen-plan" aria-selected="false" tabindex="-1" type="button"><span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#flag"/></svg></span><span><span class="tab-title">Give your budget a direction</span><span class="tab-description">Set a monthly amount and explore your estimated payoff date.</span></span><svg class="icon tab-arrow" aria-hidden="true"><use href="#arrow"/></svg></button>
-            <button class="tour-tab" role="tab" id="tab-calendar" aria-controls="screen-calendar" aria-selected="false" tabindex="-1" type="button"><span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#calendar"/></svg></span><span><span class="tab-title">Keep the month in view</span><span class="tab-description">Check due dates and keep a history of the payments you record.</span></span><svg class="icon tab-arrow" aria-hidden="true"><use href="#arrow"/></svg></button>
+            <button class="tour-tab" role="tab" id="tab-home" aria-controls="screen-home" aria-selected="true" tabindex="0" type="button"><span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#check"/></svg></span><span><span class="tab-title">See your next payment</span><span class="tab-description">Check which payment is due next, then record it after you’ve paid.</span></span><svg class="icon tab-arrow" aria-hidden="true"><use href="#arrow"/></svg></button>
+            <button class="tour-tab" role="tab" id="tab-plan" aria-controls="screen-plan" aria-selected="false" tabindex="-1" type="button"><span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#flag"/></svg></span><span><span class="tab-title">Set your monthly budget</span><span class="tab-description">Choose your budget and compare payment orders, interest costs and estimated payoff dates.</span></span><svg class="icon tab-arrow" aria-hidden="true"><use href="#arrow"/></svg></button>
+            <button class="tour-tab" role="tab" id="tab-calendar" aria-controls="screen-calendar" aria-selected="false" tabindex="-1" type="button"><span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#calendar"/></svg></span><span><span class="tab-title">Check your payment schedule</span><span class="tab-description">See due dates and review the payments you’ve recorded.</span></span><svg class="icon tab-arrow" aria-hidden="true"><use href="#arrow"/></svg></button>
             <button class="tour-tab" role="tab" id="tab-debt" aria-controls="screen-debt" aria-selected="false" tabindex="-1" type="button"><span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#plus"/></svg></span><span><span class="tab-title">Start with just one debt</span><span class="tab-description">Add a balance and regular payment. Fill in interest details when you know them.</span></span><svg class="icon tab-arrow" aria-hidden="true"><use href="#arrow"/></svg></button>
           </div>
-          <p class="tour-bottom"><svg class="icon" aria-hidden="true"><use href="#check"/></svg>A little less to keep in your head.</p>
+          <p class="tour-bottom"><svg class="icon" aria-hidden="true"><use href="#check"/></svg>Keep your budget, payment schedule and payoff estimate together.</p>
+          <div class="tour-personal">This example’s estimated payoff date is <b data-value="finish">—</b>. Enter your own debts in the app to calculate your date.<a class="text-link" href="https://play.google.com/store/apps/details?id=com.rooftop.kredierit" data-store-link="tour" target="_blank" rel="noopener noreferrer">Build my plan in DebtClear <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a><span class="micro">Calculator estimates use the numbers on this page. App screens show separate sample data.</span></div>
         </div>
       </div>
     </section>
 
-    <section class="budget container" id="your-plan" aria-labelledby="budget-title">
-      <div class="budget-heading"><h2 id="budget-title">A little extra each month.<br>How much sooner?</h2><p>See how your monthly budget could change a debt payoff plan. Move the slider to bring the estimated finish closer and see the difference in total interest.</p></div>
-      <div class="budget-demo">
-        <div>
-          <p class="sample-context">An example: $18,000 across 3 debts</p>
-          <label class="demo-label" for="budget-slider">Your monthly budget</label>
-          <output class="budget-total" id="budget-total" for="budget-slider">$1,600</output>
-          <input class="slider" id="budget-slider" type="range" min="1200" max="3000" step="50" value="1600" aria-describedby="budget-help" aria-valuetext="1,600 dollars per month, including 400 dollars for extra repayment" disabled>
-          <div class="slider-hint"><span>$1,200</span><span>Slide to compare</span><span>$3,000</span></div>
-          <div class="budget-legend"><p>Regular repayments<strong>$1,200</strong></p><p>Extra each month<strong id="extra-total">$400</strong></p></div>
-          <details class="demo-assumptions">
-            <summary>See the example debts and assumptions <svg class="icon" aria-hidden="true"><use href="#plus"/></svg></summary>
-            <table class="sample-debts"><caption class="sr-only">Example debts used for both payoff estimates, in US dollars</caption><thead><tr><th scope="col">Debt</th><th scope="col">Balance</th><th scope="col">APR</th><th scope="col">Per month</th></tr></thead><tbody><tr><th scope="row">Credit card</th><td>$8,000</td><td>24%</td><td>$400</td></tr><tr><th scope="row">Personal loan</th><td>$6,000</td><td>18%</td><td>$400</td></tr><tr><th scope="row">Other loan</th><td>$4,000</td><td>10%</td><td>$400</td></tr></tbody></table>
-            <p>Both plans use Avalanche: regular repayments first, then any remaining budget towards the highest-rate debt. The full monthly budget stays the same as debts are paid off. Interest is applied monthly at APR ÷ 12, before payments. First payment: <span id="sample-start">next month</span>. No new borrowing, fees, or rate changes.</p>
-          </details>
-        </div>
-        <div class="budget-results">
-          <span class="result-label">Estimated debt-free month</span>
-          <strong class="payoff-date" id="payoff-date">—</strong>
-          <span class="months-saved" id="months-saved">Compare with $1,200/month</span>
-          <div class="interest-result"><span class="result-label">Estimated interest saved</span><strong class="interest-saved" id="interest-saved">—</strong><p class="interest-comparison">Total interest: <span id="plan-interest">—</span> with this budget, compared with <span id="baseline-interest">—</span> at $1,200/month.</p></div>
-          <div class="payoff-timeline" aria-label="Payoff duration comparison">
-            <div><div class="timeline-label"><span>Baseline · $1,200/month</span><strong id="baseline-duration">—</strong></div><div class="timeline-track" aria-hidden="true"><span></span></div></div>
-            <div><div class="timeline-label"><span>Your budget · <span id="selected-budget">$1,600</span>/month</span><strong id="plan-duration">—</strong></div><div class="timeline-track" aria-hidden="true"><span class="selected-plan" id="plan-timeline"></span></div></div>
-          </div>
-          <p class="demo-note" id="budget-help">Illustrative estimates for the sample debts, compared with a steady $1,200 monthly budget. Your own payoff date and interest will depend on your balances, rates, payments, and lender terms.</p>
-          <noscript><p class="demo-note">Enable JavaScript to explore this payoff example.</p></noscript>
-        </div>
-      </div>
-      <p class="sr-only" id="budget-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
-      <div class="strategy-line"><p><strong>Your plan, your payment order.</strong> Start with the smallest balance (Snowball), the highest interest rate (Avalanche), or explore the other available orders. Compare the estimates in the app.</p><a class="text-link" href="#download">Make your own plan <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></div>
-    </section>
-
-    <section class="privacy" aria-labelledby="privacy-title">
-      <div class="privacy-inner container">
+    <section class="scene privacy" aria-labelledby="privacy-title">
+      <div class="layer depth-0" data-depth="0" aria-hidden="true"></div><div class="layer depth-1" data-depth="1" aria-hidden="true"></div>
+      <div class="privacy-inner container depth-4" data-depth="4">
         <div class="privacy-symbol" aria-hidden="true"><svg class="icon"><use href="#lock"/></svg></div>
-        <div><h2 id="privacy-title">Your numbers. Your space.</h2><p>No bank login. No account to create. Your debts and payment records are stored on your device. The app uses ads and analytics; the privacy policy explains the details.</p></div>
+        <div><h2 id="privacy-title">Your debt details<br>stay on your device.</h2><p>No bank login. No account to create. Your debts and payment records are stored on your device. The app uses ads and analytics; the privacy policy explains the details.</p></div>
         <a class="text-link" href="privacy/">Read our privacy policy <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
       </div>
     </section>
 
-    <section class="faq" id="questions" aria-labelledby="faq-title">
-      <div class="faq-grid container">
-        <div class="faq-heading"><h2 id="faq-title">Debt payoff app.<br>Your questions.</h2><p>Clear answers, before you start.</p></div>
+    <section class="scene faq" id="questions" aria-labelledby="faq-title">
+      <div class="layer depth-0" data-depth="0" aria-hidden="true"></div><div class="layer depth-1" data-depth="1" aria-hidden="true"></div>
+      <div class="faq-grid container depth-4" data-depth="4">
+        <div class="faq-heading"><h2 id="faq-title">Questions about DebtClear</h2><p>About the app, your data and payoff estimates.</p></div>
         <div class="faq-list">
           <details id="faq-free"><summary>Is DebtClear free?<svg class="icon" aria-hidden="true"><use href="#plus"/></svg></summary><p>Yes, DebtClear is free to download and use on Android. The app includes advertising. You don’t need to create an account.</p></details>
-          <details id="faq-bank"><summary>Do I need to connect my bank?<svg class="icon" aria-hidden="true"><use href="#plus"/></svg></summary><p>No. You enter your debts and record payments yourself. DebtClear doesn’t connect to your bank or move money. Update balances from your lender to keep your plan useful.</p></details>
-          <details id="faq-interest"><summary>What if I don’t know my interest rate?<svg class="icon" aria-hidden="true"><use href="#plus"/></svg></summary><p>You can add a debt and start tracking payments without knowing the interest rate. Complete the rate details when you’re ready to calculate a payoff estimate. An unknown rate isn’t treated as zero interest.</p></details>
+          <details id="faq-bank"><summary>Do I need to connect my bank?<svg class="icon" aria-hidden="true"><use href="#plus"/></svg></summary><p>No. You enter your debts and record payments yourself. DebtClear doesn’t connect to your bank or move money. Keep your balances in line with your lender’s statements so the estimates stay useful.</p></details>
+          <details id="faq-interest"><summary>What if I don’t know my interest rate?<svg class="icon" aria-hidden="true"><use href="#plus"/></svg></summary><p>You can add a debt and start tracking payments without knowing the interest rate. Add the rate when you have it. You’ll need it to calculate a payoff estimate. An unknown rate isn’t treated as zero interest.</p></details>
           <details id="faq-estimate"><summary>How is my payoff date calculated?<svg class="icon" aria-hidden="true"><use href="#plus"/></svg></summary><p>The estimate uses the balances, interest rates, monthly budget, extra payments, and payment order you enter. Compare Snowball and Avalanche in the app. Estimates can change and don’t include every lender-specific fee or early repayment condition.</p></details>
           <details id="faq-methods"><summary>Debt Snowball vs Avalanche: what’s the difference?<svg class="icon" aria-hidden="true"><use href="#plus"/></svg></summary><p>Snowball directs extra payments towards the smallest balance first. Avalanche prioritizes the highest interest rate. DebtClear lets you compare estimated finish dates and interest using the same balances and monthly budget, then choose the payment order that fits your priorities.</p></details>
           <details id="faq-offline"><summary>Can I use it offline?<svg class="icon" aria-hidden="true"><use href="#plus"/></svg></summary><p>Yes. Core debt tracking and payoff calculations work on your device without internet. Ads, analytics, and online services may use an internet connection. Debt details and payment records are stored locally on your device.</p></details>
@@ -664,16 +891,19 @@
       </div>
     </section>
 
-    <section class="download container" id="download" aria-labelledby="download-title">
-      <div class="download-inner">
-        <div><h2 id="download-title">Your next chapter<br>starts with one debt.</h2><p>A small first step. A clearer way forward.</p><a class="store-button" href="https://play.google.com/store/apps/details?id=com.rooftop.kredierit" data-store-link="download" target="_blank" rel="noopener noreferrer" aria-label="Download DebtClear on Google Play"><svg aria-hidden="true"><use href="#play"/></svg><span><small>GET IT ON</small><strong>Google Play</strong></span></a><p class="hero-note">Free on Android <span aria-hidden="true">&nbsp;·&nbsp;</span> No account needed</p></div>
+    <section class="scene download container" id="download" aria-labelledby="download-title">
+      <div class="layer depth-0" data-depth="0" aria-hidden="true"></div><div class="layer depth-1" data-depth="1" aria-hidden="true"></div>
+      <div class="download-inner depth-4" data-depth="4">
+        <div><h2 id="download-title">Download DebtClear.<br>Build your own payoff plan.</h2><p>Add your debts and choose a monthly budget in DebtClear. You’ll have a payment plan to follow and an estimated date to work towards.</p><a class="store-button" href="https://play.google.com/store/apps/details?id=com.rooftop.kredierit" data-store-link="download" target="_blank" rel="noopener noreferrer" aria-label="Download DebtClear on Google Play"><svg aria-hidden="true"><use href="#play"/></svg><span><small>GET IT ON</small><strong>Google Play</strong></span></a><p class="hero-note">Free on Android <span aria-hidden="true">&nbsp;·&nbsp;</span> No account needed</p><p class="download-estimate">Your example: <strong data-value="savings">—</strong> less interest. <strong><span data-value="savedMonths">—</span> months</strong> sooner. See what the numbers look like for your debts in DebtClear.</p></div>
         <div class="download-art" aria-hidden="true"><img src="assets/otter.webp" alt="" width="680" height="680" loading="lazy" decoding="async"></div>
       </div>
     </section>
   </main>
+  <aside class="plan-dock" aria-label="Your live example plan" id="plan-dock" hidden><div class="dock-stat dock-budget">Monthly budget<b data-value="budget">—</b></div><div class="dock-stat">Estimated debt-free<b data-value="finish">—</b></div><div class="dock-stat dock-interest">Less interest<b data-value="savings">—</b></div><a class="primary-button" href="https://play.google.com/store/apps/details?id=com.rooftop.kredierit" data-store-link="sticky-plan" target="_blank" rel="noopener noreferrer">Get DebtClear ↗</a></aside>
+  <p class="sr-only" id="plan-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
   <footer class="footer container">
     <div class="footer-top"><a class="wordmark" href="#main" aria-label="DebtClear home"><img src="assets/app-icon.webp" alt="" width="30" height="30" loading="lazy">DebtClear</a><div class="footer-links"><a href="privacy/">Privacy policy</a><a href="mailto:hello@debtclearwith.us">Contact</a><a href="https://play.google.com/store/apps/details?id=com.rooftop.kredierit" data-store-link="footer" target="_blank" rel="noopener noreferrer">Google Play</a><a href="https://rooftop.company" target="_blank" rel="noopener noreferrer">By Rooftop Online <span aria-hidden="true">↗</span></a></div></div>
-    <div class="footer-bottom"><p>DebtClear is a planning tool. Estimates depend on the information you enter and don’t replace your lender’s figures. Screen images show sample data.</p><p>© <span id="year">2026</span> DebtClear</p></div>
+    <div class="footer-bottom"><p>DebtClear is a planning tool. Estimates depend on the information you enter and don’t replace your lender’s figures. Screen images show sample data.</p><div><p>© <span id="year">2026</span> DebtClear</p><button type="button" class="motion-toggle" id="motion-toggle" aria-pressed="false">Pause animations</button></div></div>
   </footer>
   <script>
     (() => {
@@ -712,77 +942,248 @@
       });
       selectTab(tabs[0], false, false);
       tour.classList.add('tour-ready');
-      const slider = document.getElementById('budget-slider');
-      const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
-      const interestCurrency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      const monthFormat = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
-      // This is a fixed, disclosed example, separate from the visitor's own finances.
-      const sampleDebts = [
-        { balance: 8000, apr: 24, payment: 400 },
-        { balance: 6000, apr: 18, payment: 400 },
-        { balance: 4000, apr: 10, payment: 400 }
-      ];
-      const baselineBudget = sampleDebts.reduce((sum, debt) => sum + debt.payment, 0);
-      const now = new Date();
-      const firstPayment = new Date(now.getFullYear(), now.getMonth() + 1, 1);
-      const payoffMonth = months => monthFormat.format(new Date(firstPayment.getFullYear(), firstPayment.getMonth() + months - 1, 1));
-      const duration = months => `${months} ${months === 1 ? 'month' : 'months'}`;
-      const simulatePayoff = budget => {
-        const debts = sampleDebts.map(debt => ({ ...debt })).sort((a, b) => b.apr - a.apr);
-        let months = 0, interest = 0;
-        while (debts.some(debt => debt.balance > 0.005) && months < 600) {
-          // Apply one month's interest, then each regular repayment.
-          let available = budget;
-          debts.forEach(debt => {
-            if (debt.balance <= 0.005) { debt.balance = 0; return; }
-            const charge = debt.balance * debt.apr / 1200;
-            interest += charge;
-            debt.balance += charge;
-            const payment = Math.min(debt.balance, debt.payment);
-            debt.balance -= payment;
-            available -= payment;
-          });
-          // Roll all remaining budget through the highest-APR active debts.
-          debts.forEach(debt => {
-            const extra = Math.min(debt.balance, Math.max(0, available));
-            debt.balance -= extra;
-            available -= extra;
-          });
-          months += 1;
+      // CALCULATOR_ENGINE_START — pure functions, also exercised by Node regression tests.
+      function simulate(debts, budget, strategy = 'avalanche', mode = 'keep') {
+        if (!Number.isFinite(budget) || budget < 0 || !['avalanche', 'snowball'].includes(strategy) || !['keep', 'regular', 'release'].includes(mode) || debts.some(d => !Number.isFinite(d.balance) || d.balance < 0 || !Number.isFinite(d.apr) || d.apr < 0 || !Number.isFinite(d.payment) || d.payment <= 0)) {
+          throw new RangeError('Invalid simulation input');
         }
-        return { months, interest };
+        const balances = debts.map(d => d.balance);
+        const order = debts.map((d, i) => i).sort((a, b) => strategy === 'snowball'
+          ? debts[a].balance - debts[b].balance || a - b
+          : debts[b].apr - debts[a].apr || debts[a].balance - debts[b].balance || a - b);
+        const minimum = debts.reduce((sum, d) => sum + (d.balance > .005 ? d.payment : 0), 0);
+        const initialExtra = Math.max(0, budget - minimum);
+        const records = [], closed = debts.map(d => d.balance <= .005 ? 0 : null);
+        let interest = 0, shortfall = 0;
+        while (balances.some(b => b > .005) && records.length < 600) {
+          const charges = balances.map((b, i) => b > .005 ? b * debts[i].apr / 1200 : 0);
+          const minimums = balances.map((b, i) => b > .005 ? Math.min(b + charges[i], debts[i].payment) : 0);
+          const required = minimums.reduce((a, b) => a + b, 0);
+          if (mode === 'keep' && required > budget + .005) { shortfall = required - budget; break; }
+          const available = mode === 'regular' ? required : mode === 'release' ? required + initialExtra : budget;
+          let pool = Math.max(0, available - required);
+          const extras = debts.map(() => 0);
+          for (let i = 0; i < debts.length; i++) {
+            interest += charges[i];
+            balances[i] = Math.max(0, balances[i] + charges[i] - minimums[i]);
+          }
+          for (const i of order) {
+            const amount = Math.min(balances[i], pool);
+            extras[i] = amount;
+            balances[i] -= amount;
+            pool -= amount;
+          }
+          const month = records.length + 1;
+          balances.forEach((b, i) => { if (b <= .005) { balances[i] = 0; if (closed[i] === null) closed[i] = month; } });
+          records.push({ balances: [...balances], minimums, extras, charges, available, unused: pool,
+            freed: Math.max(0, minimum - required), total: balances.reduce((a, b) => a + b, 0) });
+        }
+        return { months: records.length, interest, records, closed, completed: balances.every(b => b <= .005), shortfall };
+      }
+      // CALCULATOR_ENGINE_END
+
+      const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      const exactMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const monthFormat = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' });
+      const today = new Date();
+      const firstPayment = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+      const dateAt = months => monthFormat.format(new Date(firstPayment.getFullYear(), firstPayment.getMonth() + months - 1, 1));
+      const defaults = [{ name: 'Credit card', balance: 8000, apr: 24, payment: 300 }, { name: 'Personal loan', balance: 6000, apr: 15, payment: 250 }, { name: 'Small loan', balance: 2000, apr: 9, payment: 150 }];
+      const state = { debts: defaults.map(d => ({ ...d })), budget: 900, strategy: 'avalanche', month: 1, commitment: 'keep' };
+      let plans, valid = false, announcementTimer;
+      const setValue = (key, value) => document.querySelectorAll(`[data-value="${key}"]`).forEach(el => { el.textContent = value; });
+      const debtInputs = [...document.querySelectorAll('[data-debt]')];
+      const budgets = [...document.querySelectorAll('[data-budget]')];
+      const error = document.getElementById('input-error');
+      const monthSlider = document.getElementById('month-slider');
+      const minimumFor = () => state.debts.reduce((sum, d) => sum + (d.balance > .005 ? d.payment : 0), 0);
+      const announce = () => {
+        clearTimeout(announcementTimer);
+        announcementTimer = setTimeout(() => {
+          document.getElementById('plan-announcement').textContent = valid
+            ? `Example updated. ${money.format(state.budget)} a month, ${state.strategy}. Estimated debt-free ${dateAt(plans.selected.months)}. ${money.format(Math.max(0, plans.baseline.interest - plans.selected.interest))} less interest and ${plans.baseline.months - plans.selected.months} months sooner than regular payments only.`
+            : error.textContent;
+        }, 450);
       };
-      const baseline = simulatePayoff(baselineBudget);
-      document.getElementById('sample-start').textContent = monthFormat.format(firstPayment);
-      document.getElementById('baseline-interest').textContent = interestCurrency.format(baseline.interest);
-      document.getElementById('baseline-duration').textContent = duration(baseline.months);
-      let budgetSummary = '';
-      const updateBudget = () => {
-        const total = Number(slider.value), extra = total - baselineBudget;
-        const plan = simulatePayoff(total);
-        const monthsSaved = baseline.months - plan.months;
-        const interestSaved = Math.max(0, baseline.interest - plan.interest);
-        const finish = payoffMonth(plan.months);
-        document.getElementById('budget-total').value = currency.format(total);
-        document.getElementById('extra-total').textContent = currency.format(extra);
-        document.getElementById('selected-budget').textContent = currency.format(total);
-        document.getElementById('payoff-date').textContent = finish;
-        document.getElementById('months-saved').textContent = monthsSaved > 0 ? `${duration(monthsSaved)} sooner` : 'Same payoff month as the baseline';
-        document.getElementById('interest-saved').textContent = interestCurrency.format(interestSaved);
-        document.getElementById('plan-interest').textContent = interestCurrency.format(plan.interest);
-        document.getElementById('plan-duration').textContent = duration(plan.months);
-        document.getElementById('plan-timeline').style.transform = `scaleX(${plan.months / baseline.months})`;
-        slider.setAttribute('aria-valuetext', `${total.toLocaleString('en-US')} dollars per month, including ${extra.toLocaleString('en-US')} dollars for extra repayment`);
-        budgetSummary = `At ${currency.format(total)} per month, the sample debts are paid off in ${finish}, over ${duration(plan.months)}. ${duration(monthsSaved)} sooner and ${interestCurrency.format(interestSaved)} less interest than the baseline budget.`;
-      };
-      slider.addEventListener('input', updateBudget);
-      // Sample amounts stay in the browser; Analytics receives only the interaction type.
-      slider.addEventListener('change', () => {
-        document.getElementById('budget-announcement').textContent = budgetSummary;
-        track('budget_demo_interaction', { interaction_type: 'slider' });
+      function invalidate(message) {
+        valid = false;
+        error.textContent = message;
+        error.hidden = false;
+        debtInputs.forEach(input => input.setAttribute('aria-invalid', String(!input.validity.valid || input.value.trim() === '')));
+        document.querySelectorAll('[data-value]').forEach(el => { el.textContent = '—'; });
+        document.getElementById('plan-dock').hidden = true;
+        ['allocations', 'milestones', 'chart-grid', 'chart-labels'].forEach(id => { document.getElementById(id).replaceChildren(); });
+        ['plan-path', 'baseline-path', 'chart-area'].forEach(id => document.getElementById(id).setAttribute('d', ''));
+        ['freed-payment', 'extra-power', 'commitment-finish', 'commitment-interest', 'commitment-budget'].forEach(id => { document.getElementById(id).textContent = '—'; });
+        document.getElementById('strategy-verdict').textContent = 'Update the example debts above to compare your plans.';
+        document.getElementById('flow-event').textContent = 'Check the debt amounts, rates and payments above to see the monthly plan.';
+        document.getElementById('flow-date').textContent = 'No estimate available';
+        document.getElementById('month-label').textContent = '—';
+        document.getElementById('commitment-note').textContent = message;
+        document.getElementById('chart-description').textContent = 'No estimate available. Update the example inputs.';
+        monthSlider.disabled = true;
+        ['month-back', 'month-next', 'jump-milestone'].forEach(id => { document.getElementById(id).disabled = true; });
+        announce();
+      }
+      function renderFlow() {
+        if (!valid) return;
+        const plan = plans.selected;
+        state.month = Math.max(1, Math.min(state.month, plan.months));
+        monthSlider.disabled = false;
+        monthSlider.max = plan.months;
+        monthSlider.value = state.month;
+        monthSlider.setAttribute('aria-valuetext', `Month ${state.month} of ${plan.months}, ${dateAt(state.month)}`);
+        document.getElementById('month-label').textContent = `Month ${state.month}`;
+        document.getElementById('flow-date').textContent = `${dateAt(state.month)} · ${state.strategy === 'avalanche' ? 'Highest rate first' : 'Smallest starting balance first'}`;
+        const record = plan.records[state.month - 1];
+        document.getElementById('allocations').innerHTML = state.debts.map((d, i) => {
+          const paid = record.minimums[i] + record.extras[i], cleared = plan.closed[i] !== null && plan.closed[i] <= state.month;
+          return `<div class="allocation"><div class="allocation-line"><span>${d.name}${cleared ? ' · Paid off ✓' : ''}</span><strong>${money.format(paid)}</strong></div><div class="allocation-track" aria-hidden="true"><span style="width:${100 * record.minimums[i] / state.budget}%"></span><span class="allocation-extra" style="width:${100 * record.extras[i] / state.budget}%"></span></div><p class="allocation-note">${exactMoney.format(record.minimums[i])} regular + ${exactMoney.format(record.extras[i])} extra · ${money.format(record.balances[i])} remaining</p></div>`;
+        }).join('');
+        document.getElementById('freed-payment').textContent = money.format(record.freed);
+        document.getElementById('extra-power').textContent = money.format(state.budget - minimumFor() + record.freed);
+        const justClosed = state.debts.filter((d, i) => plan.closed[i] === state.month).map(d => d.name);
+        const finished = state.month === plan.months;
+        document.getElementById('flow-event').textContent = finished
+          ? `All debts in this example are paid off.${record.unused > .005 ? ` ${money.format(record.unused)} of this month’s budget stays with you.` : ''}`
+          : justClosed.length ? `${justClosed.join(' + ')} paid off. Any unused budget goes towards the remaining debts.`
+          : `Of your ${money.format(state.budget)} budget, ${money.format(record.extras.reduce((a, b) => a + b, 0))} goes towards extra repayments this month.`;
+        document.getElementById('milestones').innerHTML = state.debts.map((d, i) => `<div class="milestone"><span>${d.name}</span><b>${plan.closed[i] === 0 ? 'Already paid off' : dateAt(plan.closed[i])}</b><small>${plan.closed[i] === 0 ? 'No payment needed' : `Month ${plan.closed[i]} · ${money.format(d.payment)}/mo freed`}</small></div>`).join('');
+        document.getElementById('month-back').disabled = state.month <= 1;
+        document.getElementById('month-next').disabled = state.month >= plan.months;
+        document.getElementById('jump-milestone').disabled = false;
+      }
+      function renderChart() {
+        const width = 920, left = 66, right = 24, top = 20, bottom = 238;
+        const total = state.debts.reduce((sum, d) => sum + d.balance, 0);
+        const end = Math.max(plans.baseline.months, plans.selected.months, 1);
+        const x = m => left + m / end * (width - left - right);
+        const y = b => bottom - b / total * (bottom - top);
+        const path = plan => `M${left},${y(total)} ` + plan.records.map((r, i) => `L${x(i + 1).toFixed(2)},${y(r.total).toFixed(2)}`).join(' ');
+        document.getElementById('plan-path').setAttribute('d', path(plans.selected));
+        document.getElementById('baseline-path').setAttribute('d', path(plans.baseline));
+        document.getElementById('chart-area').setAttribute('d', `${path(plans.selected)} L${x(plans.selected.months)},${bottom} L${left},${bottom} Z`);
+        document.getElementById('chart-grid').innerHTML = [0, .25, .5, .75, 1].map(f => `<line class="chart-grid" x1="${left}" y1="${y(total * f)}" x2="${width - right}" y2="${y(total * f)}"/><text class="chart-label" x="${left - 10}" y="${y(total * f) + 4}" text-anchor="end">${money.format(total * f)}</text>`).join('');
+        document.getElementById('chart-labels').innerHTML = [0, .25, .5, .75, 1].map(f => {
+          const month = Math.round(end * f);
+          return `<text class="chart-label" x="${x(month)}" y="265" text-anchor="${f === 0 ? 'start' : f === 1 ? 'end' : 'middle'}">${month === 0 ? 'Today' : dateAt(month)}</text>`;
+        }).join('');
+        document.getElementById('chart-description').textContent = `Starting debt ${money.format(total)}. Your ${state.strategy} plan pays off in ${plans.selected.months} months, ${dateAt(plans.selected.months)}, compared with ${plans.baseline.months} months, ${dateAt(plans.baseline.months)}, on regular payments only.`;
+      }
+      function renderCommitment() {
+        if (!valid) return;
+        const keeping = state.commitment === 'keep', release = plans.release;
+        const plan = keeping ? plans.selected : release;
+        const months = release.months - plans.selected.months;
+        document.querySelectorAll('[data-commitment]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.commitment === state.commitment)));
+        document.getElementById('commitment-label').textContent = keeping ? 'Keeping the same monthly budget' : 'Spending the freed money';
+        document.getElementById('commitment-finish').textContent = plan.completed ? dateAt(plan.months) : 'Beyond 600 months';
+        document.getElementById('commitment-interest').textContent = plan.completed ? money.format(plan.interest) : 'Not fully repaid';
+        document.getElementById('commitment-budget').textContent = keeping ? `${money.format(state.budget)} steady` : 'Decreases as debts are paid off';
+        document.getElementById('commitment-note').textContent = release.completed
+          ? `Keeping your monthly budget at ${money.format(state.budget)} saves ${money.format(Math.max(0, release.interest - plans.selected.interest))} in interest and ${months} ${months === 1 ? 'month' : 'months'} compared with spending the freed money elsewhere. Both options start with ${money.format(state.budget - minimumFor())} in extra monthly payments. The difference comes from reusing payments as debts are paid off.`
+          : 'If you spend the freed money, some debt remains after 600 months in this example. Keeping the same budget pays off all the debts in the selected plan.';
+      }
+      function recalculate() {
+        if (debtInputs.some(input => !input.validity.valid || input.value.trim() === '')) { invalidate('Enter a valid balance, annual rate and monthly payment for each debt. Balances and rates can be zero; monthly payments must be positive.'); return; }
+        state.debts = defaults.map((d, i) => ({ name: d.name, ...Object.fromEntries(debtInputs.filter(input => Number(input.dataset.debt) === i).map(input => [input.dataset.field, Number(input.value)])) }));
+        const total = state.debts.reduce((sum, d) => sum + d.balance, 0);
+        if (total <= .005) { invalidate('There’s no debt to calculate. Enter a balance above zero to try a payoff plan.'); return; }
+        const minimum = minimumFor();
+        state.budget = Math.max(state.budget, minimum);
+        budgets.forEach(input => {
+          input.min = minimum;
+          input.max = Math.max(minimum + 1300, Math.ceil(state.budget / 100) * 100);
+          input.step = 'any'; input.value = state.budget;
+          input.setAttribute('aria-valuetext', `${money.format(state.budget)} per month, including ${money.format(state.budget - minimum)} extra`);
+        });
+        plans = { avalanche: simulate(state.debts, state.budget, 'avalanche'), snowball: simulate(state.debts, state.budget, 'snowball'), baseline: simulate(state.debts, minimum, state.strategy, 'regular'), release: simulate(state.debts, state.budget, state.strategy, 'release') };
+        plans.selected = plans[state.strategy];
+        if (!plans.baseline.completed) { invalidate('Regular payments alone do not clear these debts within 600 months. Increase the monthly payment on the affected debt or reduce its balance or rate to see a meaningful comparison.'); return; }
+        if (!plans.avalanche.completed || !plans.snowball.completed) { invalidate('This budget does not clear every debt within 600 months. Increase the monthly budget or adjust the example debts.'); return; }
+        valid = true; error.hidden = true;
+        debtInputs.forEach(input => input.removeAttribute('aria-invalid'));
+        const selected = plans.selected;
+        const values = { budget: money.format(state.budget), minimum: money.format(minimum), extra: money.format(state.budget - minimum), finish: dateAt(selected.months), savings: money.format(Math.max(0, plans.baseline.interest - selected.interest)), savedMonths: Math.max(0, plans.baseline.months - selected.months), baselineFinish: dateAt(plans.baseline.months), strategy: state.strategy === 'avalanche' ? 'Avalanche' : 'Snowball', start: monthFormat.format(firstPayment), avalancheFinish: dateAt(plans.avalanche.months), snowballFinish: dateAt(plans.snowball.months), avalancheInterest: money.format(plans.avalanche.interest), snowballInterest: money.format(plans.snowball.interest) };
+        Object.entries(values).forEach(([key, value]) => setValue(key, value));
+        document.querySelectorAll('[data-strategy]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.strategy === state.strategy)));
+        const difference = plans.snowball.interest - plans.avalanche.interest;
+        document.getElementById('strategy-verdict').textContent = Math.abs(difference) < .5 ? 'Both strategies have about the same estimated interest for these debts. Choose the one you find easier to follow.' : difference > 0 ? `For these numbers, Avalanche costs ${money.format(difference)} less in interest than Snowball. Both use the same monthly budget.` : `For these numbers, Snowball costs ${money.format(-difference)} less in interest. Compare the interest and payoff dates before choosing.`;
+        renderFlow(); renderChart(); renderCommitment();
+        document.getElementById('plan-dock').hidden = !dockVisible;
+        announce();
+      }
+      let dockVisible = false;
+      budgets.forEach(input => {
+        input.disabled = false;
+        input.addEventListener('input', () => { state.budget = Math.round(Number(input.value) * 100) / 100; recalculate(); });
+        input.addEventListener('change', () => track('payoff_demo_interaction', { interaction_type: 'budget' }));
       });
-      slider.disabled = false;
-      updateBudget();
+      debtInputs.forEach(input => {
+        input.disabled = false;
+        input.addEventListener('input', recalculate);
+        input.addEventListener('change', () => track('payoff_demo_interaction', { interaction_type: 'debt' }));
+      });
+      document.querySelectorAll('[data-strategy]').forEach(button => button.addEventListener('click', () => { state.strategy = button.dataset.strategy; recalculate(); track('payoff_demo_interaction', { interaction_type: 'strategy' }); }));
+      document.querySelectorAll('[data-commitment]').forEach(button => button.addEventListener('click', () => { state.commitment = button.dataset.commitment; renderCommitment(); track('payoff_demo_interaction', { interaction_type: 'commitment' }); }));
+      monthSlider.addEventListener('input', () => { state.month = Number(monthSlider.value); renderFlow(); });
+      monthSlider.addEventListener('change', () => track('payoff_demo_interaction', { interaction_type: 'month' }));
+      document.getElementById('month-back').addEventListener('click', () => { state.month--; renderFlow(); });
+      document.getElementById('month-next').addEventListener('click', () => { state.month++; renderFlow(); });
+      document.getElementById('jump-milestone').addEventListener('click', () => { if (!valid) return; state.month = Math.min(...plans.selected.closed.filter(month => month > 0)); renderFlow(); });
+      document.getElementById('reset-example').addEventListener('click', () => {
+        debtInputs.forEach(input => { input.value = defaults[Number(input.dataset.debt)][input.dataset.field]; });
+        Object.assign(state, { budget: 900, strategy: 'avalanche', month: 1, commitment: 'keep' });
+        recalculate();
+      });
+      // No financial values are sent to analytics or persisted by this example.
+      recalculate();
+      const heroObserver = new IntersectionObserver(entries => {
+        const entry = entries[0];
+        dockVisible = !entry.isIntersecting && entry.boundingClientRect.bottom < 0;
+        document.getElementById('plan-dock').hidden = !dockVisible || !valid;
+      });
+      heroObserver.observe(document.querySelector('.hero'));
+
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const touchDevice = window.matchMedia('(pointer: coarse)');
+      let userPaused = false;
+      const runningAnimations = new Set();
+      const motionOff = () => userPaused || motionPreference.matches;
+      const motionButton = document.getElementById('motion-toggle');
+      function updateMotion() {
+        document.documentElement.classList.toggle('no-motion', motionOff());
+        motionButton.setAttribute('aria-pressed', String(motionOff()));
+        motionButton.disabled = motionPreference.matches;
+        motionButton.textContent = motionPreference.matches ? 'Reduced motion enabled' : motionOff() ? 'Enable animations' : 'Pause animations';
+        if (motionOff()) { runningAnimations.forEach(animation => animation.finish()); runningAnimations.clear(); }
+      }
+      motionButton.addEventListener('click', () => { userPaused = !userPaused; updateMotion(); });
+      motionPreference.addEventListener('change', updateMotion);
+      updateMotion();
+      // Content is visible by default, including when GSAP/CDN access is unavailable.
+      const sceneObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+        entry.target.classList.toggle('in-view', entry.isIntersecting);
+        if (!entry.isIntersecting || entry.target.dataset.revealed || motionOff()) return;
+        entry.target.dataset.revealed = 'true';
+        const content = entry.target.querySelector('[data-depth="4"]');
+        if (!content) return;
+        content.style.willChange = 'transform, opacity';
+        const animation = content.animate([{ opacity: .35, transform: `translateY(${touchDevice.matches ? 8 : 24}px)`, clipPath: 'inset(0 0 3% 0)' }, { opacity: 1, transform: 'translateY(0)', clipPath: 'inset(0)' }], { duration: touchDevice.matches ? 300 : 650, easing: 'cubic-bezier(.16,1,.3,1)' });
+        runningAnimations.add(animation);
+        animation.onfinish = () => { content.style.willChange = 'auto'; runningAnimations.delete(animation); };
+      }), { threshold: .08 });
+      document.querySelectorAll('.scene').forEach(scene => sceneObserver.observe(scene));
+      window.addEventListener('load', () => {
+        if (!window.gsap || !window.ScrollTrigger || motionOff() || touchDevice.matches) return;
+        gsap.registerPlugin(ScrollTrigger);
+        const context = gsap.matchMedia();
+        context.add('(prefers-reduced-motion: no-preference) and (pointer: fine)', () => {
+          const orbit = document.querySelector('.hero-orbit');
+          gsap.to(orbit, { y: -45, rotation: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+        });
+        motionButton.addEventListener('click', () => { if (motionOff()) context.revert(); });
+      });
       document.getElementById('year').textContent = String(new Date().getFullYear());
     })();
   </script>
