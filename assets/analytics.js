@@ -12,8 +12,10 @@
   const measurementButton = document.getElementById('analytics-measurement-toggle');
   let tagAdded = false;
   let preference;
+  let pagePreference;
 
   function getPreference() {
+    if (pagePreference) return pagePreference;
     const prefix = `${consentCookie}=`;
     const value = document.cookie.split(';').map(cookie => cookie.trim())
       .find(cookie => cookie.startsWith(prefix))?.slice(prefix.length);
@@ -21,7 +23,13 @@
   }
 
   function savePreference(value) {
-    document.cookie = `${consentCookie}=${value}; Max-Age=15552000${cookieAttributes}${domainAttribute}`;
+    try {
+      document.cookie = `${consentCookie}=${value}; Max-Age=15552000${cookieAttributes}${domainAttribute}`;
+    } catch {
+      // The current page can still honor the choice if browser storage is blocked.
+    }
+    pagePreference = undefined;
+    if (getPreference() !== value) pagePreference = value;
     updateAnalytics();
   }
 
