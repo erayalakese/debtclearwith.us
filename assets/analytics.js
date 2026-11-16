@@ -8,34 +8,51 @@
   const domainAttribute = sharedDomain ? `; Domain=${domain}` : '';
   const cookieAttributes = `; Path=/; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
   const disableFlag = `ga-disable-${measurementId}`;
-  const button = document.getElementById('analytics-toggle');
+  const cookiesButton = document.getElementById('analytics-toggle');
+  const measurementButton = document.getElementById('analytics-measurement-toggle');
   let tagAdded = false;
-  let enabled = false;
+  let preference;
 
-  function hasConsent() {
-    return document.cookie.split(';').some(cookie => cookie.trim() === `${consentCookie}=granted`);
+  function getPreference() {
+    const prefix = `${consentCookie}=`;
+    const value = document.cookie.split(';').map(cookie => cookie.trim())
+      .find(cookie => cookie.startsWith(prefix))?.slice(prefix.length);
+    return value === 'granted' || value === 'denied' ? value : 'cookieless';
+  }
+
+  function savePreference(value) {
+    document.cookie = `${consentCookie}=${value}; Max-Age=15552000${cookieAttributes}${domainAttribute}`;
+    updateAnalytics();
+  }
+
+  function clearAnalyticsCookies() {
+    for (const name of ['_ga', `_ga_${measurementId.slice(2)}`]) {
+      document.cookie = `${name}=; Max-Age=0${cookieAttributes}${domainAttribute}`;
+      if (sharedDomain) document.cookie = `${name}=; Max-Age=0${cookieAttributes}`;
+    }
   }
 
   function updateAnalytics() {
-    const allowed = hasConsent();
-    button.textContent = allowed ? 'Disable website analytics' : 'Enable website analytics';
-    if (allowed === enabled) return;
-    enabled = allowed;
-    window[disableFlag] = !enabled;
+    const next = getPreference();
+    const cookiesAllowed = next === 'granted';
+    const measurementsOff = next === 'denied';
+    cookiesButton.textContent = cookiesAllowed ? 'Disable analytics cookies' : 'Enable analytics cookies';
+    measurementButton.textContent = measurementsOff ? 'Enable cookieless analytics' : 'Turn off Google Analytics';
+    if (next === preference) return;
+    const previous = preference;
+    preference = next;
+    window[disableFlag] = measurementsOff;
 
-    if (!enabled) {
-      window.gtag('consent', 'update', { analytics_storage: 'denied' });
-      for (const name of ['_ga', `_ga_${measurementId.slice(2)}`]) {
-        document.cookie = `${name}=; Max-Age=0${cookieAttributes}${domainAttribute}`;
-        if (sharedDomain) document.cookie = `${name}=; Max-Age=0${cookieAttributes}`;
-      }
+    if (measurementsOff) {
+      if (tagAdded) window.gtag('consent', 'update', { analytics_storage: 'denied' });
+      if (previous === 'granted') clearAnalyticsCookies();
       return;
     }
 
     if (!tagAdded) {
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () {
-        if (arguments[0] !== 'event' || hasConsent()) window.dataLayer.push(arguments);
+        if (arguments[0] !== 'event' || getPreference() === 'granted') window.dataLayer.push(arguments);
       };
       window.gtag('consent', 'default', {
         analytics_storage: 'denied',
@@ -43,15 +60,21 @@
         ad_user_data: 'denied',
         ad_personalization: 'denied',
       });
+      window.gtag('set', 'ads_data_redaction', true);
       window.gtag('js', new Date());
     }
 
-    window.gtag('consent', 'update', { analytics_storage: 'granted' });
+    if (tagAdded || cookiesAllowed) {
+      window.gtag('consent', 'update', { analytics_storage: cookiesAllowed ? 'granted' : 'denied' });
+    }
+    if (previous === 'granted' && !cookiesAllowed) clearAnalyticsCookies();
     window.gtag('config', measurementId, {
       allow_google_signals: false,
       allow_ad_personalization_signals: false,
       cookie_domain: sharedDomain ? domain : 'auto',
-      send_page_view: !tagAdded,
+      page_location: cookiesAllowed ? location.href : `${location.origin}${location.pathname}`,
+      page_referrer: cookiesAllowed ? document.referrer : '',
+      send_page_view: !tagAdded || previous === 'denied',
     });
 
     if (!tagAdded) {
@@ -63,15 +86,17 @@
     }
   }
 
-  button.addEventListener('click', () => {
-    const value = hasConsent() ? 'denied' : 'granted';
-    document.cookie = `${consentCookie}=${value}; Max-Age=15552000${cookieAttributes}${domainAttribute}`;
-    updateAnalytics();
+  cookiesButton.addEventListener('click', () => {
+    savePreference(getPreference() === 'granted' ? 'cookieless' : 'granted');
+  });
+  measurementButton.addEventListener('click', () => {
+    savePreference(getPreference() === 'denied' ? 'cookieless' : 'denied');
   });
   window.addEventListener('pageshow', updateAnalytics);
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden) updateAnalytics();
   });
   updateAnalytics();
-  button.hidden = false;
+  cookiesButton.hidden = false;
+  measurementButton.hidden = false;
 })();
