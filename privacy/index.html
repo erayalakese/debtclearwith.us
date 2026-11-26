@@ -253,7 +253,7 @@
     <div class="page-tag">Legal</div>
     <h1 class="page-title">Privacy Policy</h1>
     <p class="page-meta">
-      Effective date: <time datetime="2026-11-16">November 16, 2026</time> &nbsp;&middot;&nbsp;
+      Effective date: <time datetime="2026-11-26">November 26, 2026</time> &nbsp;&middot;&nbsp;
       App: <strong>DebtClear</strong> (published as <strong>KrediErit</strong> on Google Play) &nbsp;&middot;&nbsp;
       Developer: <a href="https://rooftop.company" target="_blank" rel="noopener noreferrer">Rooftop Online</a>
     </p>
@@ -261,7 +261,7 @@
 
   <!-- ── OFFLINE CALLOUT ─────────────────────────────────── -->
   <div class="callout callout-offline">
-    <strong>Core debt tracking and payoff calculations work offline.</strong> Creditor names, balances, interest rates, and payment amounts are stored on your device and are not uploaded by the app to our servers or the Google services listed below. Push announcements, analytics, crash reporting, and advertising may use an internet connection and process technical identifiers. Device backups are described below.
+    <strong>Core debt tracking and payoff calculations work offline.</strong> Creditor names, balances, interest rates, and payment amounts are stored on your device and are not uploaded by the app to our servers or the third-party services listed below. Push announcements, analytics, crash reporting, advertising, and in-app purchases may use an internet connection and process technical identifiers. Device backups are described below.
   </div>
 
   <!-- ── ABOUT ───────────────────────────────────────────── -->
@@ -279,15 +279,16 @@
     <div class="section-number" aria-hidden="true">2</div>
     <h2 class="section-title">Data You Enter — Stays on Your Device</h2>
     <div class="section-body">
-      <p>The following data is stored locally in a private database on your device (SQLite via the Android data sandbox). The app does not upload this financial content to our servers or the third-party services described below:</p>
+      <p>The app stores the following data on your device, using its private SQLite database and local preferences on Android and iOS. The app does not upload these entries to our servers or the third-party services described below:</p>
       <ul>
         <li>Creditor names</li>
         <li>Debt balances, interest rates, and minimum payment amounts</li>
         <li>Your monthly payment budget</li>
         <li>Payment history and payoff status you mark within the app</li>
         <li>Your chosen payoff strategy</li>
+        <li>Your guided setup draft, which may include the name you optionally enter, your repayment goal, and any debt details you enter before saving a debt</li>
       </ul>
-      <p>This data is not backed up to any cloud service by us. Android's standard auto-backup behavior may include it in your Google account backup depending on your device settings — this is controlled entirely by Android, not by us.</p>
+      <p>We do not back up this data to a cloud service. Depending on your device settings, Android or iOS may include it in a device backup, such as a Google account or iCloud backup.</p>
     </div>
   </section>
 
@@ -296,7 +297,7 @@
     <div class="section-number" aria-hidden="true">3</div>
     <h2 class="section-title">App Settings &amp; Preferences</h2>
     <div class="section-body">
-      <p>App settings — such as your selected display language, theme, payment reminder preference, and whether you have completed the onboarding tour — are stored locally using Android's <code>SharedPreferences</code>. We also store whether the notification permission prompt has already been shown. Firebase's installation and messaging identifiers are separate from these local preferences.</p>
+      <p>App settings such as your selected display language, theme, payment reminder preference, and whether you have completed guided setup are stored on your device. We also keep local records of when the app can prompt you for a review. Your device’s app store handles any review you choose to submit.</p>
     </div>
   </section>
 
@@ -306,9 +307,9 @@
     <h2 class="section-title">Payment Reminders, Push &amp; In-App Notifications</h2>
     <div class="section-body">
       <p><strong>Local payment reminders:</strong> If you enable payment reminders, the app schedules them directly on your device. The app does not send your reminder schedule or the financial details used to create it to Firebase Cloud Messaging. You can turn these reminders off using <strong>Payment reminders</strong> in the app's settings.</p>
-      <p><strong>Push announcements:</strong> We use Firebase Cloud Messaging (FCM) to send app updates and announcements over the internet. On Android, an announcement can appear while the app is in the background or closed. If it arrives while the app is open, it is displayed through the device's notification system as a foreground notification. These messages use FCM even when displayed while you are using the app.</p>
-      <p><strong>Your notification choices:</strong> On Android versions that require it, we request notification permission. You can change that permission or disable the <strong>App updates</strong> notification category in Android's settings for DebtClear / KrediErit. The app's <strong>Payment reminders</strong> switch controls local reminders, not push announcements. Denying or disabling notification display does not, by itself, stop Firebase from registering the app installation or delete messaging identifiers.</p>
-      <p>Notification text may be visible on your lock screen, depending on your device settings. You can hide notification content or disable lock-screen notifications in Android's settings.</p>
+      <p><strong>Push announcements:</strong> We use Firebase Cloud Messaging (FCM) to send app updates and announcements over the internet on Android and iOS. Announcements can appear whether the app is open or in the background. On iOS, delivery also uses Apple Push Notification service (APNs).</p>
+      <p><strong>Your notification choices:</strong> We request notification permission when you choose to enable payment reminders on a device that requires it. You can change notification permissions in your device settings. On Android you can also disable the <strong>App updates</strong> notification category. The app's <strong>Payment reminders</strong> switch controls local reminders. Turning off notification display leaves existing Firebase messaging data subject to Firebase’s retention policies.</p>
+      <p>Notification text may be visible on your lock screen, depending on your device settings. You can hide notification content or disable lock-screen notifications in your device settings.</p>
     </div>
   </section>
 
@@ -317,7 +318,7 @@
     <div class="section-number" aria-hidden="true">5</div>
     <h2 class="section-title">Third-Party Services</h2>
     <div class="section-body">
-      <p>DebtClear uses the Google services described below, which may process technical identifiers and usage data. The app does not attach your stored creditor names, balances, interest rates, or payment amounts to analytics events or push messaging requests.</p>
+      <p>The services below may process technical identifiers, app activity, or in-app purchase information. The app does not attach your stored creditor names, balances, interest rates, or debt payment amounts to analytics, advertising, or push messaging events.</p>
 
       <!-- Firebase Analytics -->
       <div class="tp-card">
@@ -332,7 +333,7 @@
             <li>Country (derived from IP address, not stored as precise location)</li>
             <li>A random Firebase installation ID (reset when you reinstall the app)</li>
           </ul>
-          <p>We record interaction events, such as adding a debt or recording a payment; batch actions may include an item count. We do not attach creditor names, balances, interest rates, payment amounts, or payment-history contents to these events.</p>
+          <p>We record interaction events such as adding a debt or recording a payment. Batch actions may include an item count. Guided setup events can include the step viewed, how you entered setup, and elapsed time. Ad removal events can include the product ID, where you opened the offer, whether checkout started or was canceled, and the outcome of a restore attempt. Google Analytics may also record Google Play purchases or refunds, including the product ID, quantity, value, and currency.</p>
           <p>Learn more: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">firebase.google.com/support/privacy</a></p>
         </div>
       </div>
@@ -353,13 +354,13 @@
         <div class="tp-label tp-label-crash">Crash Reporting</div>
         <div class="tp-card-name">Firebase Crashlytics (Google)</div>
         <div class="tp-card-body">
-          <p>Crashlytics automatically sends a crash report to us if the app crashes. This helps us identify and fix bugs. A crash report may include:</p>
+          <p>Crashlytics sends us crash and error reports to help identify and fix bugs. A report may include:</p>
           <ul style="margin-top:8px; margin-bottom:8px;">
-            <li>Stack trace of the crash (code location only)</li>
+            <li>Error details and a stack trace</li>
             <li>Device model, OS version, and app version at time of crash</li>
             <li>Approximate time and frequency of the crash</li>
           </ul>
-          <p>Crash reports do not contain your name, debt data, or any personally identifiable information.</p>
+          <p>Firebase may associate reports with app installation identifiers. We do not add your name or debt records to reports.</p>
           <p>Learn more: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">firebase.google.com/support/privacy</a></p>
         </div>
       </div>
@@ -371,13 +372,34 @@
         <div class="tp-card-body">
           <p>DebtClear displays ads served by Google AdMob. To serve relevant ads, Google may collect:</p>
           <ul style="margin-top:8px; margin-bottom:8px;">
-            <li>Google Advertising ID (GAID) — a resettable identifier on your device</li>
+            <li>Google Advertising ID (GAID) on Android or Apple’s Identifier for Advertisers (IDFA) on iOS if you allow tracking</li>
             <li>Device identifiers and IP address</li>
             <li>Ad interaction data (impressions, clicks)</li>
             <li>General location inferred from IP address</li>
           </ul>
-          <p>You can reset or opt out of personalized advertising at any time in your Android device settings under <strong>Privacy &rarr; Ads</strong>. If you opt out, you may still see ads, but they will not be based on your interests.</p>
+          <p>When available, use <strong>Settings &rarr; Help and privacy &rarr; Privacy options</strong> in the app to manage Google ad choices. You can also manage your advertising ID in Android settings or change the app’s tracking permission in iOS settings. You may still see ads if you decline personalization or tracking.</p>
           <p>Learn more: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">policies.google.com/technologies/ads</a></p>
+        </div>
+      </div>
+
+      <!-- TikTok App Events -->
+      <div class="tp-card">
+        <div class="tp-label tp-label-ads">Advertising Measurement</div>
+        <div class="tp-card-name">TikTok App Events SDK (Android)</div>
+        <div class="tp-card-body">
+          <p>When enabled in the Android app, TikTok’s SDK uses install-referrer information, available advertising or device identifiers, and technical data such as IP address and app version to measure and optimize ad campaigns. The SDK reports new installs. We also send an activation event when you complete guided setup or, if you skipped setup without saving a debt, when you save your first debt.</p>
+          <p>For a verified ad removal purchase made through a checkout on that device, we send TikTok the ad removal product ID, price, currency, quantity, and an event ID derived from the order ID. The event payload excludes Google Play receipts, purchase tokens, raw order IDs, and debt records.</p>
+          <p>Learn more: <a href="https://ads.tiktok.com/resources/help/article/about-tiktoks-privacy-policy?lang=en" target="_blank" rel="noopener noreferrer">TikTok privacy information</a></p>
+        </div>
+      </div>
+
+      <!-- Google Play Billing -->
+      <div class="tp-card">
+        <div class="tp-label tp-label-analytics">In-App Purchases</div>
+        <div class="tp-card-name">Google Play Billing (Android)</div>
+        <div class="tp-card-body">
+          <p>Where ad removal is offered, Google Play processes the payment and associates the purchase with your Google account. The app receives purchase details from Google Play, including the product ID, purchase status, purchase token, and signed receipt, to verify or restore ad removal. It verifies the receipt on your device and stores verified ownership locally.</p>
+          <p>Learn more: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></p>
         </div>
       </div>
     </div>
@@ -408,14 +430,13 @@
     <div class="section-number" aria-hidden="true">8</div>
     <h2 class="section-title">Your Data Rights</h2>
     <div class="section-body">
-      <p><strong>Deleting locally stored debt data:</strong> You can remove debts, payment history, and app settings from your device in either of these ways:</p>
+      <p><strong>Deleting local data:</strong> In the app, <strong>Settings &rarr; Data &rarr; Clear all data</strong> removes your debts, payment history, saved payoff plan, and guided setup draft. To also remove local app settings, use your device settings:</p>
       <ul style="margin-top:8px; margin-bottom:12px;">
-        <li><strong>Clear app data:</strong> Go to <strong>Settings &rarr; Apps &rarr; DebtClear / KrediErit &rarr; Storage &rarr; Clear Data</strong>. This removes all debts, payment history, and settings while keeping the app installed.</li>
-        <li><strong>Uninstall the app:</strong> Uninstalling removes the app and its local data. Android backups, if enabled, are managed separately through your device and Google account settings.</li>
+        <li><strong>Clear app data on Android:</strong> Go to <strong>Settings &rarr; Apps &rarr; DebtClear / KrediErit &rarr; Storage &rarr; Clear Data</strong>.</li>
+        <li><strong>Delete the app:</strong> Deleting the app removes its local data. Manage any device backups separately through your device, Google account, or iCloud settings.</li>
       </ul>
-      <p>We cannot access or recover your locally stored debt records. Data already processed by Google services is separate from the app's local database and is subject to those services' retention and deletion policies.</p>
-      <p><strong>Messaging and analytics data:</strong> Disabling payment reminders or Android notification permission does not automatically delete Firebase identifiers, erase analytics records, or turn off Analytics. If you have a privacy or deletion request concerning these services, contact us using the details below. Firebase explains its data handling and retention at <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">firebase.google.com/support/privacy</a>.</p>
-      <p><strong>Ad personalization:</strong> Go to <strong>Settings &rarr; Privacy &rarr; Ads</strong> on your Android device to reset your Advertising ID or opt out of personalized ads.</p>
+      <p>We cannot access or recover your locally stored debt records. Third-party services handle data they have already received under their own retention and deletion policies.</p>
+      <p><strong>Privacy and deletion requests:</strong> You can contact us about analytics, messaging, or advertising data using the details below. See the service links above for provider-specific privacy information.</p>
       <p>For requests related to data processed by Google's services, please refer to <a href="https://myaccount.google.com" target="_blank" rel="noopener noreferrer">myaccount.google.com</a>.</p>
     </div>
   </section>
